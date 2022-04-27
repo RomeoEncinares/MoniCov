@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "685309521828",
+    "project_id": "monicov-239ce",
+    "storage_bucket": "monicov-239ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685309521828:android:ba86e8bf04725989ee1b31",
+        "android_client_info": {
+          "package_name": "com.chronos.monicov"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685309521828-9pgm0upkvfgg7st0tcboik3l5r8ti4ms.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcqgAxihygVkjX_PzlwG8je0184N_Zb1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685309521828-9pgm0upkvfgg7st0tcboik3l5r8ti4ms.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
