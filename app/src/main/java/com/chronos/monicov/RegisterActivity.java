@@ -105,13 +105,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         String firstName = firstNameField.getText().toString();
         String lastName = lastNameField.getText().toString();
 
-        if (TextUtils.isEmpty(email)){
-            emailField.setError("Email cannot be empty");
-            emailField.requestFocus();
-        }else if (TextUtils.isEmpty(password)){
-            passwordField.setError("Password cannot be empty");
-            passwordField.requestFocus();
-        }else{
+        if (checkFields(email, password, firstName, lastName)){
             User user = new User(email, password, userType, firstName, lastName);
             String keyId = mDatabase.push().getKey();
             mDatabase.child(keyId).setValue(user);
@@ -128,5 +122,28 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public boolean checkFields(String email, String password, String firstName, String lastName){
+        if (TextUtils.isEmpty(email)){
+            emailField.setError("Email cannot be empty");
+            emailField.requestFocus();
+        }
+        else if (TextUtils.isEmpty(password)){
+            passwordField.setError("Email cannot be empty");
+            passwordField.requestFocus();
+        }
+        else if (TextUtils.isEmpty(firstName)){
+            firstNameField.setError("Email cannot be empty");
+            firstNameField.requestFocus();
+        }
+        else if (TextUtils.isEmpty(lastName)){
+            lastNameField.setError("Email cannot be empty");
+            lastNameField.requestFocus();
+        }
+        else {
+            return true;
+        }
+        return false;
     }
 }
