@@ -1,12 +1,8 @@
 package com.chronos.monicov;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,6 +10,9 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,12 +24,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextInputEditText etRegEmail;
-    TextInputEditText etRegPassword;
-    TextInputEditText etFirstName;
-    TextInputEditText etLastName;
-    TextView tvLoginHere;
-    Button btnRegister;
+    TextInputEditText emailField;
+    TextInputEditText passwordField;
+    TextInputEditText firstNameField;
+    TextInputEditText lastNameField;
+    TextView loginText;
+    Button registerButton;
     private DatabaseReference mDatabase;
     private FirebaseDatabase database;
     private static final String USER = "user";
@@ -43,12 +42,12 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        etRegEmail = findViewById(R.id.etRegEmail);
-        etRegPassword = findViewById(R.id.etRegPass);
-        etFirstName = findViewById(R.id.etFirstName);
-        etLastName = findViewById(R.id.etLastName);
-        tvLoginHere = findViewById(R.id.tvLoginHere);
-        btnRegister = findViewById(R.id.btnRegister);
+        emailField = findViewById(R.id.etRegEmail);
+        passwordField = findViewById(R.id.etRegPass);
+        firstNameField = findViewById(R.id.etFirstName);
+        lastNameField = findViewById(R.id.etLastName);
+        loginText = findViewById(R.id.tvLoginHere);
+        registerButton = findViewById(R.id.btnRegister);
         spinner = findViewById(R.id.user_type);
 
         database = FirebaseDatabase.getInstance();
@@ -61,27 +60,27 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         spinner.setOnItemSelectedListener(this);
 
-        btnRegister.setOnClickListener(view ->{
+        registerButton.setOnClickListener(view ->{
             createUser();
             createUserObject();
         });
 
-        tvLoginHere.setOnClickListener(view ->{
+        loginText.setOnClickListener(view ->{
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         });
     }
 
     // Create User in Firebase Authentication
     private void createUser() {
-        String email = etRegEmail.getText().toString();
-        String password = etRegPassword.getText().toString();
+        String email = emailField.getText().toString();
+        String password = passwordField.getText().toString();
 
         if (TextUtils.isEmpty(email)){
-            etRegEmail.setError("Email cannot be empty");
-            etRegEmail.requestFocus();
+            emailField.setError("Email cannot be empty");
+            emailField.requestFocus();
         }else if (TextUtils.isEmpty(password)){
-            etRegPassword.setError("Password cannot be empty");
-            etRegPassword.requestFocus();
+            passwordField.setError("Password cannot be empty");
+            passwordField.requestFocus();
         }else{
             mAuth.createUserWithEmailAndPassword(email,password)
                     .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -100,18 +99,18 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
     //Create user Object in Firebase Realtime Database
     private void createUserObject() {
-        String email = etRegEmail.getText().toString();
-        String password = etRegPassword.getText().toString();
+        String email = emailField.getText().toString();
+        String password = passwordField.getText().toString();
         String userType = spinner.getSelectedItem().toString();
-        String firstName = etFirstName.getText().toString();
-        String lastName = etLastName.getText().toString();
+        String firstName = firstNameField.getText().toString();
+        String lastName = lastNameField.getText().toString();
 
         if (TextUtils.isEmpty(email)){
-            etRegEmail.setError("Email cannot be empty");
-            etRegEmail.requestFocus();
+            emailField.setError("Email cannot be empty");
+            emailField.requestFocus();
         }else if (TextUtils.isEmpty(password)){
-            etRegPassword.setError("Password cannot be empty");
-            etRegPassword.requestFocus();
+            passwordField.setError("Password cannot be empty");
+            passwordField.requestFocus();
         }else{
             User user = new User(email, password, userType, firstName, lastName);
             String keyId = mDatabase.push().getKey();
