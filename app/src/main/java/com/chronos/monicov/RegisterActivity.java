@@ -62,7 +62,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         registerButton.setOnClickListener(view ->{
             createUser();
-            createUserObject();
         });
 
         loginText.setOnClickListener(view ->{
@@ -71,19 +70,9 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     }
 
     // Create User in Firebase Authentication
-    private void createUser() {
-        String email = emailField.getText().toString();
-        String password = passwordField.getText().toString();
-
-        if (TextUtils.isEmpty(email)){
-            emailField.setError("Email cannot be empty");
-            emailField.requestFocus();
-        }else if (TextUtils.isEmpty(password)){
-            passwordField.setError("Password cannot be empty");
-            passwordField.requestFocus();
-        }else{
-            mAuth.createUserWithEmailAndPassword(email,password)
-                    .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+    private void addFirebaseUser(String email, String password) {
+        mAuth.createUserWithEmailAndPassword(email,password)
+                .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
@@ -95,17 +84,19 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                         }
                     });
         }
-    }
 
-    //Create user Object in Firebase Realtime Database
-    private void createUserObject() {
+    //Create User
+    private void createUser() {
         String email = emailField.getText().toString();
         String password = passwordField.getText().toString();
         String userType = spinner.getSelectedItem().toString();
         String firstName = firstNameField.getText().toString();
         String lastName = lastNameField.getText().toString();
 
+
         if (checkFields(email, password, firstName, lastName)){
+            addFirebaseUser(email, password);
+            //Create User in Firebase Realtime Database
             User user = new User(email, password, userType, firstName, lastName);
             String keyId = mDatabase.push().getKey();
             mDatabase.child(keyId).setValue(user);
