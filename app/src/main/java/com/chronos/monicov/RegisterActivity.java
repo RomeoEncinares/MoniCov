@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,15 +23,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     TextInputEditText etRegEmail;
     TextInputEditText etRegPassword;
+    TextInputEditText etFirstName;
+    TextInputEditText etLastName;
     TextView tvLoginHere;
     Button btnRegister;
     private DatabaseReference mDatabase;
     private FirebaseDatabase database;
     private static final String USER = "user";
+    private Spinner spinner;
 
     FirebaseAuth mAuth;
 
@@ -39,12 +45,21 @@ public class RegisterActivity extends AppCompatActivity {
 
         etRegEmail = findViewById(R.id.etRegEmail);
         etRegPassword = findViewById(R.id.etRegPass);
+        etFirstName = findViewById(R.id.etFirstName);
+        etLastName = findViewById(R.id.etLastName);
         tvLoginHere = findViewById(R.id.tvLoginHere);
         btnRegister = findViewById(R.id.btnRegister);
+        spinner = findViewById(R.id.user_type);
 
         database = FirebaseDatabase.getInstance();
         mDatabase = database.getReference(USER);
         mAuth = FirebaseAuth.getInstance();
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.user_type, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(this);
 
         btnRegister.setOnClickListener(view ->{
             createUser();
@@ -87,6 +102,9 @@ public class RegisterActivity extends AppCompatActivity {
     private void createUserObject() {
         String email = etRegEmail.getText().toString();
         String password = etRegPassword.getText().toString();
+        String userType = spinner.getSelectedItem().toString();
+        String firstName = etFirstName.getText().toString();
+        String lastName = etLastName.getText().toString();
 
         if (TextUtils.isEmpty(email)){
             etRegEmail.setError("Email cannot be empty");
@@ -95,11 +113,21 @@ public class RegisterActivity extends AppCompatActivity {
             etRegPassword.setError("Password cannot be empty");
             etRegPassword.requestFocus();
         }else{
-            User user = new User(email, password);
+            User user = new User(email, password, userType, firstName, lastName);
             String keyId = mDatabase.push().getKey();
             mDatabase.child(keyId).setValue(user);
         }
 
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String choice = adapterView.getItemAtPosition(i).toString();
+        Toast.makeText(getApplicationContext(), choice, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }
