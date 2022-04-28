@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MoniCov</string>
+    <string-array name="user_type">
+        <item>Patient</item>
+        <item>Medical Professional</item>
+    </string-array>
 </resources>
