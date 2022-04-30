@@ -32,7 +32,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     Button registerButton;
     private DatabaseReference mDatabase;
     private FirebaseDatabase database;
-    private static final String USER = "user";
     private Spinner spinner;
 
     FirebaseAuth mAuth;
@@ -51,7 +50,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         spinner = findViewById(R.id.user_type);
 
         database = FirebaseDatabase.getInstance();
-        mDatabase = database.getReference(USER);
         mAuth = FirebaseAuth.getInstance();
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.user_type, android.R.layout.simple_spinner_item);
@@ -96,10 +94,20 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
         if (checkFields(email, password, firstName, lastName)){
             addFirebaseUser(email, password);
-            //Create User in Firebase Realtime Database
-            User user = new User(email, password, userType, firstName, lastName);
-            String keyId = mDatabase.push().getKey();
-            mDatabase.child(keyId).setValue(user);
+            if (userType.equals("Patient")){
+                Patient patient = new Patient(email, password, userType, firstName, lastName);
+                mDatabase = database.getReference("Patient");
+                String keyId = mDatabase.push().getKey();
+                mDatabase.child(keyId).setValue(patient);
+                System.out.println(userType);
+            }
+            else{
+                MedicalProfessional medicalProfessional = new MedicalProfessional(email, password, userType, firstName, lastName);
+                mDatabase = database.getReference("Medical Professional");
+                String keyId = mDatabase.push().getKey();
+                mDatabase.child(keyId).setValue(medicalProfessional);
+            }
+
         }
 
     }
