@@ -1,11 +1,11 @@
 package com.chronos.monicov;
 
 public class User {
-    private String email;
-    private String password;
-    private String firstname;
-    private String lastname;
-    private String userType;
+    protected String email;
+    protected String password;
+    protected String firstname;
+    protected String lastname;
+    protected String userType;
 
     public User() {
     }
@@ -18,23 +18,4 @@ public class User {
         this.lastname = lastname;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
 }
