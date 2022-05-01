@@ -13,9 +13,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class medicalProfessionalHomeActivity extends AppCompatActivity {
 
@@ -44,41 +46,10 @@ public class medicalProfessionalHomeActivity extends AppCompatActivity {
             }
         });
 
-        generateCodeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String code = generateCode();
-                String currentUser = getCurrent();
-                addPatient(currentUser, code, "Initial", "Initial", "Initial");
-            }
-        });
     }
 
     public void logout(){
         mAuth.signOut();
         startActivity(new Intent(medicalProfessionalHomeActivity.this, LandingActivity.class));
     }
-
-    public String generateCode(){
-        int max = 60000;
-        int min = 10000;
-        int code;
-        code = (int) (Math.random() * (max - min + 1) + min);
-        return String.valueOf(code);
-    }
-
-    public void addPatient(String reference, String code, String patientEmail, String patientFirstname, String patientLastname){
-        MedicalProfessional.assignedPatient newPatient = new MedicalProfessional.assignedPatient(code, patientEmail, patientFirstname, patientLastname);
-        mDatabase = database.getReference("Medical Professional");
-        medicalProfessionalNode = mDatabase.child(reference);
-        patientListNode = medicalProfessionalNode.child("Patient List");
-        String keyId = code;
-        patientListNode.child(keyId).setValue(newPatient);
-    }
-
-    public String getCurrent(){
-        String getCurrentMedicalProfessional = mAuth.getInstance().getCurrentUser().getEmail().toString();
-        return getCurrentMedicalProfessional.replace(".", "");
-    }
-
 }
