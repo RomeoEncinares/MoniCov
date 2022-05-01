@@ -34,7 +34,6 @@ public class MedicalProfessional extends User{
     }
 
     static class assignedPatient{
-        String code;
         String patientFirstName;
         String patientLastName;
         String patientEmail;
@@ -42,15 +41,10 @@ public class MedicalProfessional extends User{
         public assignedPatient(){
         }
 
-        public assignedPatient(String code, String patientEmail, String patientFirstName, String patientLastName){
-            this.code = code;
+        public assignedPatient(String patientEmail, String patientFirstName, String patientLastName){
             this.patientEmail = patientEmail;
             this.patientFirstName = patientFirstName;
             this.patientLastName = patientLastName;
-        }
-
-        public String getCode() {
-            return code;
         }
 
         public String getPatientFirstName() {
