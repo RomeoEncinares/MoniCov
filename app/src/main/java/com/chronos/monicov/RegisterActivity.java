@@ -97,14 +97,16 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             if (userType.equals("Patient")){
                 Patient patient = new Patient(email, password, userType, firstName, lastName);
                 mDatabase = database.getReference("Patient");
-                String keyId = mDatabase.push().getKey();
+//                String keyId = mDatabase.push().getKey();
+                String keyId = email.replace(".", "");
                 mDatabase.child(keyId).setValue(patient);
                 System.out.println(userType);
             }
             else{
                 MedicalProfessional medicalProfessional = new MedicalProfessional(email, password, userType, firstName, lastName);
                 mDatabase = database.getReference("Medical Professional");
-                String keyId = mDatabase.push().getKey();
+//                String keyId = mDatabase.push().getKey();
+                String keyId = email.replace(".", "");
                 mDatabase.child(keyId).setValue(medicalProfessional);
             }
 
