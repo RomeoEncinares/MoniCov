@@ -32,4 +32,37 @@ public class MedicalProfessional extends User{
     public String getUserType() {
         return userType;
     }
+
+    static class assignedPatient{
+        String code;
+        String patientFirstName;
+        String patientLastName;
+        String patientEmail;
+
+        public assignedPatient(){
+        }
+
+        public assignedPatient(String code, String patientEmail, String patientFirstName, String patientLastName){
+            this.code = code;
+            this.patientEmail = patientEmail;
+            this.patientFirstName = patientFirstName;
+            this.patientLastName = patientLastName;
+        }
+
+        public String getCode() {
+            return code;
+        }
+
+        public String getPatientFirstName() {
+            return patientFirstName;
+        }
+
+        public String getPatientLastName() {
+            return patientLastName;
+        }
+
+        public String getPatientEmail() {
+            return patientEmail;
+        }
+    }
 }
