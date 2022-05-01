@@ -49,6 +49,7 @@ public class medicalProfessionalHomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String code = generateCode();
                 String currentUser = getCurrent();
+                addPatient(currentUser, code, "Initial", "Initial", "Initial");
             }
         });
     }
@@ -64,6 +65,15 @@ public class medicalProfessionalHomeActivity extends AppCompatActivity {
         int code;
         code = (int) (Math.random() * (max - min + 1) + min);
         return String.valueOf(code);
+    }
+
+    public void addPatient(String reference, String code, String patientEmail, String patientFirstname, String patientLastname){
+        MedicalProfessional.assignedPatient newPatient = new MedicalProfessional.assignedPatient(code, patientEmail, patientFirstname, patientLastname);
+        mDatabase = database.getReference("Medical Professional");
+        medicalProfessionalNode = mDatabase.child(reference);
+        patientListNode = medicalProfessionalNode.child("Patient List");
+        String keyId = code;
+        patientListNode.child(keyId).setValue(newPatient);
     }
 
     public String getCurrent(){
