@@ -48,6 +48,7 @@ public class medicalProfessionalHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String code = generateCode();
+                String currentUser = getCurrent();
             }
         });
     }
@@ -65,5 +66,9 @@ public class medicalProfessionalHomeActivity extends AppCompatActivity {
         return String.valueOf(code);
     }
 
+    public String getCurrent(){
+        String getCurrentMedicalProfessional = mAuth.getInstance().getCurrentUser().getEmail().toString();
+        return getCurrentMedicalProfessional.replace(".", "");
+    }
 
 }
