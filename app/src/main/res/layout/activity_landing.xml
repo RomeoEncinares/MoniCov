@@ -42,10 +42,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:text="Or"
+        android:text="or"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -56,19 +55,18 @@
         android:id="@+id/btnLoginLanding"
         android:layout_width="284dp"
         android:layout_height="50dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="340dp"
         android:backgroundTint="@color/darkBlue_0C159F"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slogantextView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRegisterLanding"
         android:layout_width="284dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="248dp"
         android:backgroundTint="@color/darkBlue_0C159F"
         android:text="Register"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,7 +74,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLoginLanding"
-        app:layout_constraintVertical_bias="0.652" />
+        app:layout_constraintVertical_bias="0.068" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnScan"
