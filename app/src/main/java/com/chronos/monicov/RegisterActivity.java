@@ -32,7 +32,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     TextInputEditText firstNameField;
     TextInputEditText lastNameField;
     TextInputEditText medicalProfessionalEmailField;
-    TextView loginText;
     Button registerButton;
     private DatabaseReference mDatabase, medicalProfessionalNode, patientListNode;;
     private FirebaseDatabase database;
@@ -50,7 +49,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         firstNameField = findViewById(R.id.etFirstName);
         lastNameField = findViewById(R.id.etLastName);
         medicalProfessionalEmailField = findViewById(R.id.etmedicalProfessionalEmail);
-        loginText = findViewById(R.id.tvLoginHere);
         registerButton = findViewById(R.id.btnRegister);
         spinner = findViewById(R.id.user_type);
 
@@ -67,9 +65,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             createUser();
         });
 
-        loginText.setOnClickListener(view -> {
-            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-        });
     }
 
     // Create User in Firebase Authentication
