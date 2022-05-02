@@ -31,7 +31,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     TextInputEditText passwordField;
     TextInputEditText firstNameField;
     TextInputEditText lastNameField;
-    TextInputEditText medicalProfessionalEmailField;
     Button registerButton;
     private DatabaseReference mDatabase, medicalProfessionalNode, patientListNode;;
     private FirebaseDatabase database;
@@ -48,7 +47,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         passwordField = findViewById(R.id.etRegPass);
         firstNameField = findViewById(R.id.etFirstName);
         lastNameField = findViewById(R.id.etLastName);
-        medicalProfessionalEmailField = findViewById(R.id.etmedicalProfessionalEmail);
         registerButton = findViewById(R.id.btnRegister);
         spinner = findViewById(R.id.user_type);
 
@@ -75,7 +73,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(RegisterActivity.this, "User registered successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         } else {
                             Toast.makeText(RegisterActivity.this, "Registration Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -90,9 +87,8 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         String userType = spinner.getSelectedItem().toString();
         String firstName = firstNameField.getText().toString();
         String lastName = lastNameField.getText().toString();
-        String medicalProfessionalEmail = medicalProfessionalEmailField.getText().toString();
 
-        if (checkFields(email, password, firstName, lastName, medicalProfessionalEmail)) {
+        if (checkFields(email, password, firstName, lastName)) {
             addFirebaseUser(email, password);
             if (userType.equals("Patient")) {
                 Patient patient = new Patient(email, password, userType, firstName, lastName);
@@ -100,12 +96,18 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 String keyId = email.replace(".", "");
                 mDatabase.child(keyId).setValue(patient);
                 mDatabase = database.getReference("Medical Professional");
-                // Add to Medical Professional Patient List
-                addPatient(medicalProfessionalEmail, email, firstName, lastName);
+                // Pass Data to RegisterIfPatientActivity
+                Intent passData = new Intent(getBaseContext(), RegisterIfPatientActivity.class);
+                passData.putExtra("email", email);
+                passData.putExtra("firstName", firstName);
+                passData.putExtra("lastName", lastName);
+                startActivity(passData);
             } else {
                 MedicalProfessional medicalProfessional = new MedicalProfessional(email, password, userType, firstName, lastName);
                 String keyId = email.replace(".", "");
                 mDatabase.child(keyId).setValue(medicalProfessional);
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+
             }
 
         }
@@ -123,7 +125,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
 
     }
 
-    public boolean checkFields(String email, String password, String firstName, String lastName, String medicalProfessionalEmail) {
+    public boolean checkFields(String email, String password, String firstName, String lastName) {
         if (TextUtils.isEmpty(email)) {
             emailField.setError("Email cannot be empty");
             emailField.requestFocus();
@@ -137,23 +139,11 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             lastNameField.setError("Email cannot be empty");
             lastNameField.requestFocus();
         }
-        else if (TextUtils.isEmpty(medicalProfessionalEmail)) {
-            medicalProfessionalEmailField.setError("Email cannot be empty");
-            medicalProfessionalEmailField.requestFocus();
-        }
         else {
             return true;
         }
         return false;
     }
 
-    public void addPatient(String reference, String patientEmail, String patientFirstname, String patientLastname){
-        MedicalProfessional.assignedPatient newPatient = new MedicalProfessional.assignedPatient(patientEmail, patientFirstname, patientLastname);
-        mDatabase = database.getReference("Medical Professional");
-        String targetReference = reference.replace(".", "");
-        medicalProfessionalNode = mDatabase.child(targetReference);
-        patientListNode = medicalProfessionalNode.child("Patient List");
-        String keyId = patientEmail.replace(".", "");
-        patientListNode.child(keyId).setValue(newPatient);
-    }
+
 }
