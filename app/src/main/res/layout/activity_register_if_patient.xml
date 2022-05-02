@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterIfPatientActivity">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etmedicalProfessionalEmail"
+        android:layout_width="315dp"
+        android:layout_height="45dp"
+        android:hint="Medical Professional Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegister"
+        android:layout_width="315dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/darkBlue_0C159F"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etmedicalProfessionalEmail"
+        app:layout_constraintVertical_bias="0.176" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
