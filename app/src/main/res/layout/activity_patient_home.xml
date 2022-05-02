@@ -13,8 +13,10 @@
         android:text="Patient Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
 
     <Button
         android:id="@+id/logoutPatient"
@@ -26,5 +28,124 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.697" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@color/grayBlue_F0F2FA"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" >
+
+        <ImageButton
+            android:id="@+id/patientHomeButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_house" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/patientMedicalProfessionalButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_user_doctor" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/patientAddStatusButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_circle_plus" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/patientNotificationButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_bell" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/patientSettingsButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_gears" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/boxContainer"
+        android:layout_width="340dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textInBoxContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/boxContainer"
+        app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="@+id/boxContainer"
+        app:layout_constraintTop_toTopOf="@+id/boxContainer"
+        app:layout_constraintVertical_bias="0.227" />
+
+    <TextView
+        android:id="@+id/firstNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Firstname"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/boxContainer"
+        app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="@+id/boxContainer"
+        app:layout_constraintTop_toBottomOf="@+id/textInBoxContainer"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/circleInContainer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@+id/boxContainer"
+        app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="@+id/boxContainer"
+        app:layout_constraintTop_toTopOf="@+id/boxContainer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
