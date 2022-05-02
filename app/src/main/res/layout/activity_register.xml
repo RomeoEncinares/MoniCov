@@ -44,8 +44,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etmedicalProfessionalEmail"
-        app:layout_constraintVertical_bias="0.176" />
+        app:layout_constraintTop_toBottomOf="@+id/user_type"
+        app:layout_constraintVertical_bias="0.297" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/etRegPass"
@@ -57,17 +57,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etRegEmail" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etmedicalProfessionalEmail"
-        android:layout_width="315dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:hint="Medical Professional Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_type" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/etRegEmail"
