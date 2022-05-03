@@ -70,7 +70,7 @@
             android:layout_height="match_parent" />
 
         <ImageButton
-            android:id="@+id/patientMedicalProfessionalButton"
+            android:id="@+id/patientProfileButton"
             android:layout_width="53dp"
             android:layout_height="match_parent"
             android:backgroundTint="@color/grayBlue_F0F2FA"
