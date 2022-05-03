@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,8 +24,11 @@ public class patientProfileActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
+    Button updateButton;
     ImageButton homeButton, profileButton;
     TextView firstNameTextField, lastNameTextField, lastNameInitialTextField;
+    TextInputEditText contactNumberField, ageField, genderField, birthDateField, addressField, vaccineNameField,
+            vaccineDate1Field, vaccineDate2Field;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +41,19 @@ public class patientProfileActivity extends AppCompatActivity {
         firstNameTextField = findViewById(R.id.firstNameText);
         lastNameTextField = findViewById(R.id.lastNameText);
         lastNameInitialTextField = findViewById(R.id.etLastNameInitial);
+        contactNumberField = findViewById(R.id.etcontactNumber);
+        ageField = findViewById(R.id.etAge);
+        genderField = findViewById(R.id.etGender);
+        birthDateField = findViewById(R.id.etBirthDate);
+        addressField = findViewById(R.id.etAddress);
+        vaccineNameField = findViewById(R.id.etVaccineName);
+        vaccineDate1Field = findViewById(R.id.etVaccine1);
+        vaccineDate2Field = findViewById(R.id.etVaccine2);
+        updateButton = findViewById(R.id.btnUpdate);
 
-        queryData(getCurrentPatient());
+        String currentUser = getCurrentPatient();
+
+        queryData(currentUser);
 
         homeButton.setOnClickListener(view -> {
             startActivity(new Intent(patientProfileActivity.this, patientHomeActivity.class));
