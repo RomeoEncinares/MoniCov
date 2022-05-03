@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".patientProfileActivity">
+
+        <TextView
+            android:id="@+id/container"
+            android:layout_width="376dp"
+            android:layout_height="178dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/circleContainer"
+            android:layout_width="97dp"
+            android:layout_height="97dp"
+            android:background="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="@+id/container"
+            app:layout_constraintEnd_toEndOf="@+id/container"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="@+id/container"
+            app:layout_constraintTop_toTopOf="@+id/container"
+            app:layout_constraintVertical_bias="0.185" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/container"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/circleContainer">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FirstName"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LastName"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/etLastNameInitial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LN"
+            android:textColor="@color/black"
+            android:textSize="48dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/circleContainer"
+            app:layout_constraintEnd_toEndOf="@+id/circleContainer"
+            app:layout_constraintStart_toStartOf="@+id/circleContainer"
+            app:layout_constraintTop_toTopOf="@+id/circleContainer" />
+
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Professional Information"
+            android:textColor="@color/moderateBlue_3347C4"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etcontactNumber"
+            android:layout_width="315dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:hint="Contact Number"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/etcontactNumber"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etcontactNumber"
+            app:layout_constraintTop_toBottomOf="@+id/etcontactNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAge"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:hint="Age"
+                android:inputType="text" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGender"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:hint="Gender"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etBirthDate"
+            android:layout_width="315dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:hint="Birth Date"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAddress"
+            android:layout_width="315dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:hint="Address"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/etBirthDate"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etBirthDate"
+            app:layout_constraintTop_toBottomOf="@+id/etBirthDate" />
+
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Vaccination Status"
+            android:textColor="@color/moderateBlue_3347C4"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.037"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etAddress" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etVaccineName"
+            android:layout_width="315dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:hint="Vaccine Name"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/etVaccineName"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="@+id/etVaccineName"
+            app:layout_constraintTop_toBottomOf="@+id/etVaccineName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etVaccine1"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:hint="1st Dose Date"
+                android:inputType="date" />
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etVaccine2"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
+                android:hint="2nd Dose Date"
+                android:inputType="date" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegister"
+            android:layout_width="315dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/darkBlue_0C159F"
+            android:text="Submit"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintVertical_bias="0.062" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:background="@color/grayBlue_F0F2FA"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+            <ImageButton
+                android:id="@+id/patientHomeButton"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/grayBlue_F0F2FA"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_house" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/patientProfileButton"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/grayBlue_F0F2FA"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_user_doctor" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/patientAddStatusButton"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/grayBlue_F0F2FA"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_circle_plus" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/patientNotificationButton"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/grayBlue_F0F2FA"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_bell" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <ImageButton
+                android:id="@+id/patientSettingsButton"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/grayBlue_F0F2FA"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_gears" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/container"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout5"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+
