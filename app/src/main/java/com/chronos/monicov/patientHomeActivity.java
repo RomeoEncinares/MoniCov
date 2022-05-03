@@ -24,7 +24,7 @@ public class patientHomeActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
     Button logoutButton;
-    ImageButton homeButton;
+    ImageButton homeButton, profileButton;
     TextView firstNameTextField, lastNameTextField;
 
 
@@ -36,6 +36,7 @@ public class patientHomeActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         logoutButton = findViewById(R.id.logoutPatient);
         homeButton = findViewById(R.id.patientHomeButton);
+        profileButton = findViewById(R.id.patientProfileButton);
         firstNameTextField = findViewById(R.id.firstNameText);
         lastNameTextField = findViewById(R.id.lastNameText);
 
@@ -47,6 +48,10 @@ public class patientHomeActivity extends AppCompatActivity {
 
         homeButton.setOnClickListener(view -> {
             startActivity(new Intent(patientHomeActivity.this, patientHomeActivity.class));
+        });
+
+        profileButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientHomeActivity.this, patientProfileActivity.class));
         });
 
     }
