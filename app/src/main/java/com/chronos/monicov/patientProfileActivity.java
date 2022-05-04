@@ -22,7 +22,8 @@ import java.util.HashMap;
 public class patientProfileActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase, parentPatientNode, childPatientNode;
+    private FirebaseDatabase database;
 
     Button updateButton;
     ImageButton homeButton, profileButton;
@@ -36,6 +37,8 @@ public class patientProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_patient_profile);
 
         mAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+
         homeButton = findViewById(R.id.patientHomeButton);
         profileButton = findViewById(R.id.patientProfileButton);
         firstNameTextField = findViewById(R.id.firstNameText);
@@ -61,6 +64,10 @@ public class patientProfileActivity extends AppCompatActivity {
 
         profileButton.setOnClickListener(view -> {
             startActivity(new Intent(patientProfileActivity.this, patientProfileActivity.class));
+        });
+
+        updateButton.setOnClickListener(view -> {
+            addPatientProfile(currentUser);
         });
     }
 
@@ -89,5 +96,34 @@ public class patientProfileActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void addPatientProfile(String reference){
+        String contact = contactNumberField.getText().toString();
+        String age = ageField.getText().toString();
+        String gender = genderField.getText().toString();
+        String birthDate = birthDateField.getText().toString();
+        String address = addressField.getText().toString();
+        String vaccineName = vaccineNameField.getText().toString();
+        String vaccineDate1 = vaccineDate1Field.getText().toString();
+        String vaccineDate2 = vaccineDate2Field.getText().toString();
+
+//        Patient.patientProfileDetails patientProfile = new   Patient.patientProfileDetails(contact, age, gender, birthDate, address, vaccineName,
+//                vaccineDate1, vaccineDate2);
+        HashMap map = new HashMap();
+        map.put("contact", contact);
+        map.put("age", age);
+        map.put("gender", gender);
+        map.put("birthdate", birthDate);
+        map.put("address", address);
+        map.put("vaccineName", vaccineName);
+        map.put("vaccineDate1", vaccineDate1);
+        map.put("vaccineDate2", vaccineDate2);
+        mDatabase = database.getReference("Patient");
+        String targetReference = reference.replace(".", "");
+        parentPatientNode = mDatabase.child(targetReference);
+//        System.out.println(parentPatientNode);
+//        childPatientNode = parentPatientNode.child("Patient List");
+        parentPatientNode.updateChildren(map);
     }
 }
