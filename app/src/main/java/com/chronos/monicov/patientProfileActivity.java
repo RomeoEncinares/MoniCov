@@ -22,7 +22,7 @@ import java.util.HashMap;
 public class patientProfileActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-    private DatabaseReference mDatabase, parentPatientNode, childPatientNode;
+    private DatabaseReference mDatabase, parentPatientNode;
     private FirebaseDatabase database;
 
     Button updateButton;
@@ -57,6 +57,7 @@ public class patientProfileActivity extends AppCompatActivity {
         String currentUser = getCurrentPatient();
 
         queryData(currentUser);
+        checkProfile(currentUser);
 
         homeButton.setOnClickListener(view -> {
             startActivity(new Intent(patientProfileActivity.this, patientHomeActivity.class));
@@ -123,4 +124,60 @@ public class patientProfileActivity extends AppCompatActivity {
         parentPatientNode = mDatabase.child(targetReference);
         parentPatientNode.updateChildren(map);
     }
+
+    public void checkProfile(String reference){
+        String emailKey = reference.replace(".", "");
+        mDatabase = FirebaseDatabase.getInstance().getReference("Patient").child(emailKey);
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                HashMap<String, String> map = (HashMap<String, String>) snapshot.getValue();
+                String contact = map.get("contact");
+                String age = map.get("age");
+                String gender = map.get("gender");
+                String birthDate = map.get("birthdate");
+                String address = map.get("address");
+                String vaccineName = map.get("vaccineName");
+                String vaccineDate1 = map.get("vaccineDate1");
+                String vaccineDate2 = map.get("vaccineDate2");
+
+                setProfileHint(contact, age, gender, birthDate, address, vaccineName, vaccineDate1, vaccineDate2);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void setProfileHint(String contact, String age, String gender, String birthDate, String address,
+                               String vaccineName, String vaccineDate1, String vaccineDate2){
+        if(contact != null){
+            contactNumberField.setText(contact);
+        }
+        if (age != null){
+            ageField.setText(age);
+        }
+        if (gender != null){
+            genderField.setText(gender);
+        }
+        if (birthDate != null){
+            System.out.println(birthDate);
+            birthDateField.setText(birthDate);
+        }
+        if (address != null){
+            addressField.setText(address);
+        }
+        if (vaccineName != null){
+            vaccineNameField.setText(vaccineName);
+        }
+        if (vaccineDate1 != null){
+            vaccineDate1Field.setText(vaccineDate1);
+        }
+        if (vaccineDate2 != null){
+            vaccineDate2Field.setText(vaccineDate2);
+        }
+    }
+
 }
