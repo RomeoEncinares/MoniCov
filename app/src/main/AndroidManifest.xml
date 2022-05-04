@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoniCov">
         <activity
+            android:name=".patientMedicalProfessionalProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".patientSettingsActivity"
             android:exported="false" />
         <activity
