@@ -108,8 +108,7 @@ public class patientProfileActivity extends AppCompatActivity {
         String vaccineDate1 = vaccineDate1Field.getText().toString();
         String vaccineDate2 = vaccineDate2Field.getText().toString();
 
-//        Patient.patientProfileDetails patientProfile = new   Patient.patientProfileDetails(contact, age, gender, birthDate, address, vaccineName,
-//                vaccineDate1, vaccineDate2);
+
         HashMap map = new HashMap();
         map.put("contact", contact);
         map.put("age", age);
@@ -122,8 +121,6 @@ public class patientProfileActivity extends AppCompatActivity {
         mDatabase = database.getReference("Patient");
         String targetReference = reference.replace(".", "");
         parentPatientNode = mDatabase.child(targetReference);
-//        System.out.println(parentPatientNode);
-//        childPatientNode = parentPatientNode.child("Patient List");
         parentPatientNode.updateChildren(map);
     }
 }
