@@ -24,8 +24,9 @@ public class patientHomeActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
     Button logoutButton;
-    ImageButton homeButton, profileButton;
+    ImageButton homeButton, profileButton, settingsButton;
     TextView firstNameTextField, lastNameTextField;
+    String firstNamePass, lastNamePass;
 
 
     @Override
@@ -36,6 +37,7 @@ public class patientHomeActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         logoutButton = findViewById(R.id.logoutPatient);
         homeButton = findViewById(R.id.patientHomeButton);
+        settingsButton = findViewById(R.id.patientSettingsButton);
         profileButton = findViewById(R.id.patientProfileButton);
         firstNameTextField = findViewById(R.id.firstNameText);
         lastNameTextField = findViewById(R.id.lastNameText);
@@ -52,6 +54,13 @@ public class patientHomeActivity extends AppCompatActivity {
 
         profileButton.setOnClickListener(view -> {
             startActivity(new Intent(patientHomeActivity.this, patientProfileActivity.class));
+        });
+
+        settingsButton.setOnClickListener(view -> {
+            Intent passData = new Intent(getBaseContext(), patientSettingsActivity.class);
+            passData.putExtra("firstName", firstNamePass);
+            passData.putExtra("lastName", lastNamePass);
+            startActivity(passData);
         });
 
     }
@@ -75,6 +84,9 @@ public class patientHomeActivity extends AppCompatActivity {
                 String firstName = map.get("firstname");
                 String lastName = map.get("lastname");
                 char lastNameChar = lastName.charAt(0);
+
+                firstNamePass = firstName;
+                lastNamePass = lastName;
 
                 firstNameTextField.setText(firstName);
                 lastNameTextField.setText(String.valueOf(lastNameChar));
