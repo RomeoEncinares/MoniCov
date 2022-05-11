@@ -26,7 +26,7 @@ public class patientProfileActivity extends AppCompatActivity {
     private FirebaseDatabase database;
 
     Button updateButton;
-    ImageButton homeButton, profileButton;
+    ImageButton homeButton, profileButton, statusButton, medicalProfessionalButton, settingsButton;
     TextView firstNameTextField, lastNameTextField, lastNameInitialTextField;
     TextInputEditText contactNumberField, ageField, genderField, birthDateField, addressField, vaccineNameField,
             vaccineDate1Field, vaccineDate2Field;
@@ -41,6 +41,10 @@ public class patientProfileActivity extends AppCompatActivity {
 
         homeButton = findViewById(R.id.patientHomeButton);
         profileButton = findViewById(R.id.patientProfileButton);
+        statusButton = findViewById(R.id.patientAddStatusButton);
+        medicalProfessionalButton = findViewById(R.id.patientMedicalButton);
+        settingsButton = findViewById(R.id.patientSettingsButton);
+
         firstNameTextField = findViewById(R.id.firstNameText);
         lastNameTextField = findViewById(R.id.lastNameText);
         lastNameInitialTextField = findViewById(R.id.etLastNameInitial);
@@ -65,6 +69,18 @@ public class patientProfileActivity extends AppCompatActivity {
 
         profileButton.setOnClickListener(view -> {
             startActivity(new Intent(patientProfileActivity.this, patientProfileActivity.class));
+        });
+
+        statusButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientProfileActivity.this, patientStatusActivity.class));
+        });
+
+        medicalProfessionalButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientProfileActivity.this, patientMedicalProfessionalProfileActivity.class));
+        });
+
+        settingsButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientProfileActivity.this, patientSettingsActivity.class));
         });
 
         updateButton.setOnClickListener(view -> {
