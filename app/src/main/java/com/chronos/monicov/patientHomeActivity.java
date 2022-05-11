@@ -23,7 +23,7 @@ public class patientHomeActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
-    ImageButton homeButton, profileButton, medicalProfessionalButton, settingsButton;
+    ImageButton homeButton, profileButton, medicalProfessionalButton, settingsButton, statusButton;
     TextView firstNameTextField, lastNameTextField;
     String firstNamePass, lastNamePass;
 
@@ -35,9 +35,10 @@ public class patientHomeActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         homeButton = findViewById(R.id.patientHomeButton);
-        settingsButton = findViewById(R.id.patientSettingsButton);
         profileButton = findViewById(R.id.patientProfileButton);
+        statusButton = findViewById(R.id.patientAddStatusButton);
         medicalProfessionalButton = findViewById(R.id.patientMedicalButton);
+        settingsButton = findViewById(R.id.patientSettingsButton);
         firstNameTextField = findViewById(R.id.firstNameText);
         lastNameTextField = findViewById(R.id.lastNameText);
 
@@ -51,6 +52,10 @@ public class patientHomeActivity extends AppCompatActivity {
             startActivity(new Intent(patientHomeActivity.this, patientProfileActivity.class));
         });
 
+        statusButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientHomeActivity.this, patientStatusActivity.class));
+        });
+
         settingsButton.setOnClickListener(view -> {
             Intent passData = new Intent(getBaseContext(), patientSettingsActivity.class);
             passData.putExtra("firstName", firstNamePass);
@@ -61,6 +66,7 @@ public class patientHomeActivity extends AppCompatActivity {
         medicalProfessionalButton.setOnClickListener(view -> {
             startActivity(new Intent(patientHomeActivity.this, patientMedicalProfessionalProfileActivity.class));
         });
+
 
     }
 
