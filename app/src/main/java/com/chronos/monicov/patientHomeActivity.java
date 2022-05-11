@@ -56,17 +56,16 @@ public class patientHomeActivity extends AppCompatActivity {
             startActivity(new Intent(patientHomeActivity.this, patientStatusActivity.class));
         });
 
+        medicalProfessionalButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientHomeActivity.this, patientMedicalProfessionalProfileActivity.class));
+        });
+
         settingsButton.setOnClickListener(view -> {
             Intent passData = new Intent(getBaseContext(), patientSettingsActivity.class);
             passData.putExtra("firstName", firstNamePass);
             passData.putExtra("lastName", lastNamePass);
             startActivity(passData);
         });
-
-        medicalProfessionalButton.setOnClickListener(view -> {
-            startActivity(new Intent(patientHomeActivity.this, patientMedicalProfessionalProfileActivity.class));
-        });
-
 
     }
 
