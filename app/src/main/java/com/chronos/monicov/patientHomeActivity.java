@@ -61,10 +61,7 @@ public class patientHomeActivity extends AppCompatActivity {
         });
 
         settingsButton.setOnClickListener(view -> {
-            Intent passData = new Intent(getBaseContext(), patientSettingsActivity.class);
-            passData.putExtra("firstName", firstNamePass);
-            passData.putExtra("lastName", lastNamePass);
-            startActivity(passData);
+            startActivity(new Intent(patientHomeActivity.this, patientSettingsActivity.class));
         });
 
     }
