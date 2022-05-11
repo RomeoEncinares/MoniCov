@@ -1,52 +1,509 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".patientStatusQuestionnaireActivity">
 
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="288dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="28dp"
-        android:gravity="center"
-        android:text="COVID-19 Symptoms Questionnaire"
-        android:textColor="@color/darkBlue_0C159F"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textQuestion3"
+        app:layout_constraintStart_toStartOf="@+id/textQuestion3"
+        app:layout_constraintTop_toBottomOf="@+id/textQuestion3">
 
-    <TextView
-        android:id="@+id/decriptionText"
-        android:layout_width="288dp"
-        android:layout_height="74dp"
-        android:gravity="center"
-        android:text="COVID-19 Symptoms Questionnaire"
-        android:textColor="@color/darkBlue_0C159F"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/titleText"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/titleText"
-        app:layout_constraintTop_toBottomOf="@+id/titleText" />
 
-    <Spinner
+        <RadioButton
+            android:id="@+id/radioButton3_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Yes"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="555dp" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <RadioButton
+            android:id="@+id/radioButton3_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            tools:layout_editor_absoluteX="286dp"
+            tools:layout_editor_absoluteY="558dp" />
+    </RadioGroup>
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="COVID-19 Symptoms Questionnaire"
+            android:textColor="@color/darkBlue_0C159F"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/decriptionText"
+            android:layout_width="318dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="20dp"
+            android:justificationMode="inter_word"
+            android:text="  This application is a COVID-19 quarantine isolation monitoring which will greatly help to facilitate and expedite the management of quarantine and isolation of patients affected by the disease."
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/titleText"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="@+id/titleText"
+            app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+        <Spinner
             android:id="@+id/current_day"
             android:layout_width="315dp"
             android:layout_height="45dp"
+            android:layout_marginTop="20dp"
             android:hint="User Type"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/decriptionText" />
 
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Check-up Questions"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/moderateBlue_3347C4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/current_day"
+            app:layout_constraintTop_toBottomOf="@+id/current_day" />
 
+        <TextView
+            android:id="@+id/textQuestion1"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:justificationMode="inter_word"
+            android:text="1. Have you experienced any fever?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/current_day"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="@+id/current_day"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion1"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion1"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion1">
+
+            <RadioButton
+                android:id="@+id/radioButton1_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/radioButton1_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textQuestion2"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="2. Have you experienced any headaches?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion1"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion1"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup1" />
+
+    <TextView
+        android:id="@+id/textQuestion3"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:text="3. Have you experienced any cough?"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="normal"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/textQuestion2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textQuestion2"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textQuestion2"
+        app:layout_constraintStart_toStartOf="@+id/textQuestion2"
+        app:layout_constraintTop_toBottomOf="@+id/textQuestion2">
+
+        <RadioButton
+            android:id="@+id/radioButton2_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="555dp" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <RadioButton
+            android:id="@+id/radioButton2_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            tools:layout_editor_absoluteX="286dp"
+            tools:layout_editor_absoluteY="558dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textQuestion4"
+            android:layout_width="330dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="20dp"
+            android:text="4. Have you experienced any shortness of breath?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion3"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion4"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion4"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion4">
+
+            <RadioButton
+                android:id="@+id/radioButton4_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="555dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/radioButton4_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:layout_editor_absoluteX="286dp"
+                tools:layout_editor_absoluteY="558dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textQuestion5"
+            android:layout_width="330dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="20dp"
+            android:text="5. Have you experienced any sore throat?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion4"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup4" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion5"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion5"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion5">
+
+            <RadioButton
+                android:id="@+id/radioButton5_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="555dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/radioButton5_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:layout_editor_absoluteX="286dp"
+                tools:layout_editor_absoluteY="558dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textQuestion6"
+            android:layout_width="330dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="20dp"
+            android:text="6. Have you experienced any body chills?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion5"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion5"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup5" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion6"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion6"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion6">
+
+            <RadioButton
+                android:id="@+id/radioButton6_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="555dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/radioButton6_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:layout_editor_absoluteX="286dp"
+                tools:layout_editor_absoluteY="558dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textQuestion7"
+            android:layout_width="330dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="20dp"
+            android:text="7. Have you experienced any muscle aches?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion6"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion6"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup6" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion7"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion7"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion7">
+
+            <RadioButton
+                android:id="@+id/radioButton7_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="555dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/radioButton7_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:layout_editor_absoluteX="286dp"
+                tools:layout_editor_absoluteY="558dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textQuestion8"
+            android:layout_width="330dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="20dp"
+            android:text="8. Have you experienced any lost of smell?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion7"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup7" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion8"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion8"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion8">
+
+            <RadioButton
+                android:id="@+id/radioButton8_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="555dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/radioButton8_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:layout_editor_absoluteX="286dp"
+                tools:layout_editor_absoluteY="558dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textQuestion9"
+            android:layout_width="330dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="20dp"
+            android:text="9. Have you experienced any lost of taste ?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion8"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion8"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup8" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion9"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion9"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion9">
+
+            <RadioButton
+                android:id="@+id/radioButton9_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="555dp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <RadioButton
+                android:id="@+id/radioButton9_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                tools:layout_editor_absoluteX="286dp"
+                tools:layout_editor_absoluteY="558dp" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textQuestion10"
+            android:layout_width="330dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="20dp"
+            android:text="10. Other symptoms?"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion9"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion9"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup9" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etOtherSymptoms"
+            android:layout_width="330dp"
+            android:layout_height="45dp"
+            android:hint="Symptom"
+            android:inputType="text"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion10"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion10"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion10"/>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="333dp"
+            android:layout_height="47dp"
+            android:backgroundTint="@color/darkBlue_0C159F"
+            android:text="Submit"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/etOtherSymptoms"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etOtherSymptoms"
+            app:layout_constraintTop_toBottomOf="@+id/etOtherSymptoms"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
