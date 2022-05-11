@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoniCov">
         <activity
+            android:name=".patientStatusQuestionnaireActivity"
+            android:exported="false" />
+        <activity
             android:name=".patientStatusActivity"
             android:exported="false" />
         <activity
