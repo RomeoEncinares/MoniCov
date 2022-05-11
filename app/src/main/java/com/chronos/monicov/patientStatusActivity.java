@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class patientStatusActivity extends AppCompatActivity {
 
+    Button addStatusButton, viewStatusButton;
     ImageButton homeButton, profileButton, statusButton, medicalProfessionalButton, settingsButton;
 
     @Override
@@ -20,6 +22,12 @@ public class patientStatusActivity extends AppCompatActivity {
         statusButton = findViewById(R.id.patientAddStatusButton);
         medicalProfessionalButton = findViewById(R.id.patientMedicalButton);
         settingsButton = findViewById(R.id.patientSettingsButton);
+
+        addStatusButton = findViewById(R.id.btnAddStatus);
+
+        addStatusButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientStatusActivity.this, patientStatusQuestionnaireActivity.class));
+        });
 
         homeButton.setOnClickListener(view -> {
             startActivity(new Intent(patientStatusActivity.this, patientHomeActivity.class));
