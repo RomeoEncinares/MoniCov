@@ -22,7 +22,7 @@ import java.util.HashMap;
 public class patientStatusQuestionnaireActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     FirebaseAuth mAuth;
-    private DatabaseReference mDatabase, parentPatientNode, childPatientNode;
+    private DatabaseReference mDatabase, patientListNode, currentPatientNode, statusListNode;
     private FirebaseDatabase database;
 
     private Spinner spinner;
@@ -121,9 +121,10 @@ public class patientStatusQuestionnaireActivity extends AppCompatActivity implem
 
         mDatabase = database.getReference("Patient");
         String targetReference = reference.replace(".", "");
-        parentPatientNode = mDatabase.child(targetReference);
-        childPatientNode = parentPatientNode.child(currentDay);
-        childPatientNode.updateChildren(StatusMap);
+        patientListNode = mDatabase.child(targetReference);
+        currentPatientNode = patientListNode.child("Status");
+        statusListNode = currentPatientNode.child(currentDay);
+        statusListNode.updateChildren(StatusMap);
     }
 
     public String getCurrentPatient(){
