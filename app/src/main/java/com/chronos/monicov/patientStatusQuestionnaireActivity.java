@@ -112,7 +112,7 @@ public class patientStatusQuestionnaireActivity extends AppCompatActivity implem
         StatusMap.put("Headache", answerTwo);
         StatusMap.put("Cough", answerThree);
         StatusMap.put("Shortness of Breath", answerFour);
-        StatusMap.put("Sore Throath", answerFive);
+        StatusMap.put("Sore Throat", answerFive);
         StatusMap.put("Body Chills", answerSix);
         StatusMap.put("Muscle Ache", answerSeven);
         StatusMap.put("Lost of Smell", answerEight);
