@@ -1,0 +1,77 @@
+package com.chronos.monicov;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+
+public class patientStatusListActivity extends AppCompatActivity {
+
+    ListView daysListView;
+    ArrayList<String> daysList = new ArrayList<>();
+    DatabaseReference mDatabase, patientListNode, currentPatientNode;
+    FirebaseAuth mAuth;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_patient_status_list);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        ArrayAdapter<String> dayListAdapter = new ArrayAdapter<>(patientStatusListActivity.this, android.R.layout.simple_list_item_1, daysList);
+        daysListView = (ListView) findViewById(R.id.dayButton);
+        daysListView.setAdapter(dayListAdapter);
+
+        String currentUser = getCurrentPatient();
+        String targetReference = currentUser.replace(".", "");
+        mDatabase = FirebaseDatabase.getInstance().getReference("Patient");
+        patientListNode = mDatabase.child(targetReference);
+        currentPatientNode = patientListNode.child("Status");
+        currentPatientNode.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                String value = snapshot.getKey();
+                daysList.add(value);
+                dayListAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                dayListAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public String getCurrentPatient(){
+        String currentUser = mAuth.getCurrentUser().getEmail().toString();return currentUser;
+    }
+
+}
