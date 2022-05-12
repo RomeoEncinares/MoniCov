@@ -24,9 +24,14 @@ public class patientStatusActivity extends AppCompatActivity {
         settingsButton = findViewById(R.id.patientSettingsButton);
 
         addStatusButton = findViewById(R.id.btnAddStatus);
+        viewStatusButton = findViewById(R.id.btnViewStatus);
 
         addStatusButton.setOnClickListener(view -> {
             startActivity(new Intent(patientStatusActivity.this, patientStatusQuestionnaireActivity.class));
+        });
+
+        viewStatusButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientStatusActivity.this, patientStatusListActivity.class));
         });
 
         homeButton.setOnClickListener(view -> {
