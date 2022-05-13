@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -66,6 +69,16 @@ public class patientStatusListActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        daysListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String chosenDay = adapterView.getItemAtPosition(i).toString();
+                Intent passData = new Intent(getBaseContext(), patientStatusDayActivity.class);
+                passData.putExtra("Day", chosenDay);
+                startActivity(passData);
             }
         });
     }
