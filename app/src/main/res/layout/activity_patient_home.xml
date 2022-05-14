@@ -52,7 +52,7 @@
             android:layout_height="match_parent"
             android:backgroundTint="@color/grayBlue_F0F2FA"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_house" />
+            app:srcCompat="@drawable/ic_house_selected" />
 
         <Space
             android:layout_width="20dp"
