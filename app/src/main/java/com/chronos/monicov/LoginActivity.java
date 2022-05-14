@@ -38,11 +38,16 @@ public class LoginActivity extends AppCompatActivity {
         emailField = findViewById(R.id.etLoginEmail);
         passwordField = findViewById(R.id.etLoginPass);
         loginButton = findViewById(R.id.btnLogin);
+        registerText = findViewById(R.id.tvRegisterHere);
 
         mAuth = FirebaseAuth.getInstance();
 
         loginButton.setOnClickListener(view -> {
             loginUser();
+        });
+
+        registerText.setOnClickListener(view -> {
+            startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
         });
     }
 
