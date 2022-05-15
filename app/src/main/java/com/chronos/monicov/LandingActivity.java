@@ -11,6 +11,7 @@ public class LandingActivity extends AppCompatActivity {
 
     Button loginButton;
     Button registerButton;
+    Button  scanButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class LandingActivity extends AppCompatActivity {
 
         loginButton = findViewById(R.id.btnLoginLanding);
         registerButton = findViewById(R.id.btnRegisterLanding);
+        scanButton = findViewById(R.id.btnScan);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +34,10 @@ public class LandingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(LandingActivity.this, RegisterActivity.class));
             }
+        });
+
+        scanButton.setOnClickListener(view -> {
+            startActivity(new Intent(LandingActivity.this, acquaintanceScanActivity.class));
         });
     }
 }
