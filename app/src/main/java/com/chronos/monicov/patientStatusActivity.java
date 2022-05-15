@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class patientStatusActivity extends AppCompatActivity {
 
-    Button addStatusButton, viewStatusButton;
+    Button addStatusButton, viewStatusButton, generateQRButton;
     ImageButton homeButton, profileButton, statusButton, medicalProfessionalButton, settingsButton;
 
     @Override
@@ -25,6 +25,7 @@ public class patientStatusActivity extends AppCompatActivity {
 
         addStatusButton = findViewById(R.id.btnAddStatus);
         viewStatusButton = findViewById(R.id.btnViewStatus);
+        generateQRButton = findViewById(R.id.btnGenerateQRCode);
 
         addStatusButton.setOnClickListener(view -> {
             startActivity(new Intent(patientStatusActivity.this, patientStatusQuestionnaireActivity.class));
@@ -32,6 +33,10 @@ public class patientStatusActivity extends AppCompatActivity {
 
         viewStatusButton.setOnClickListener(view -> {
             startActivity(new Intent(patientStatusActivity.this, patientStatusListActivity.class));
+        });
+
+        generateQRButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientStatusActivity.this, patientStatusGenerateQRActivity.class));
         });
 
         homeButton.setOnClickListener(view -> {

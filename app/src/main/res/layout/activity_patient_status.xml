@@ -131,7 +131,7 @@
         android:id="@+id/btnViewStatus"
         android:layout_width="315dp"
         android:layout_height="45dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/darkBlue_0C159F"
         android:gravity="center"
         android:text="View Status"
@@ -139,6 +139,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnAddStatus"
         app:layout_constraintTop_toBottomOf="@+id/btnAddStatus" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGenerateQRCode"
+        android:layout_width="315dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/darkBlue_0C159F"
+        android:gravity="center"
+        android:text="Generate Qr Code"
+        app:layout_constraintEnd_toEndOf="@+id/btnViewStatus"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnViewStatus"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewStatus" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
