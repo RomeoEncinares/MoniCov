@@ -28,7 +28,9 @@ public class medicalProfessionalPatientStatusLandingActivity extends AppCompatAc
         });
 
         viewMedicationButton.setOnClickListener(view -> {
-
+            Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientViewMedicationActivity.class);
+            passData.putExtra("patient", chosenPatient);
+            startActivity(passData);
         });
     }
 }
