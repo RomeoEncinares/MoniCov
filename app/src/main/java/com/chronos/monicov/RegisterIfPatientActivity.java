@@ -54,7 +54,10 @@ public class RegisterIfPatientActivity extends AppCompatActivity {
         if (checkFields(medicalProfessionalEmail)){
             addPatient(medicalProfessionalEmail, email, firstName, lastName);
             addMedical(email, medicalProfessionalEmail);
-            startActivity(new Intent(RegisterIfPatientActivity.this, LoginActivity.class));
+//            startActivity(new Intent(RegisterIfPatientActivity.this, LoginActivity.class));
+            Intent passData = new Intent(getBaseContext(), patientInitialScreeningActivity.class);
+            passData.putExtra("email", email);
+            startActivity(passData);
         }
     }
 
@@ -89,5 +92,6 @@ public class RegisterIfPatientActivity extends AppCompatActivity {
         String targetReference = reference.replace(".", "");
         parentPatientNode = mDatabase.child(targetReference);
         parentPatientNode.updateChildren(map);
+
     }
 }
