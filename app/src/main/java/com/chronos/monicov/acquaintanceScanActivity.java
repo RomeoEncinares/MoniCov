@@ -3,6 +3,7 @@ package com.chronos.monicov;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -34,7 +35,10 @@ public class acquaintanceScanActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         userEmailField.setText(result.getText());
-                        Toast.makeText(acquaintanceScanActivity.this, result.getText(), Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(acquaintanceScanActivity.this, result.getText(), Toast.LENGTH_SHORT).show();
+                        Intent passData = new Intent(getBaseContext(), acquaintancePatientDayListActivity.class);
+                        passData.putExtra("qrEmail", result.getText());
+                        startActivity(passData);
                     }
                 });
             }
