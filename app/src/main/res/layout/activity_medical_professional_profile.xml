@@ -106,7 +106,7 @@
             app:layout_constraintStart_toStartOf="@+id/textView5"
             app:layout_constraintTop_toBottomOf="@+id/textView5">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/describeYourself"
                 android:layout_width="345dp"
                 android:layout_height="wrap_content"
