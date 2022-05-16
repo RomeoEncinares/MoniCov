@@ -132,6 +132,22 @@
         app:layout_constraintStart_toEndOf="@+id/iconNumberOfPatient"
         app:layout_constraintTop_toTopOf="@+id/iconNumberOfPatient" />
 
+    <ListView
+        android:id="@+id/patientListButton"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boxoutline"
+        android:dividerHeight="10dp"
+        android:text="Patient"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
