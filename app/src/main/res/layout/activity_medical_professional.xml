@@ -394,6 +394,8 @@
                 android:background="@drawable/circleblue" />
         </LinearLayout>
 
+
+        <!--navbar-->
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
@@ -409,19 +411,19 @@
             app:layout_constraintVertical_bias="0">
 
             <ImageButton
-                android:id="@+id/patientHomeButton"
+                android:id="@+id/medicalHomeButton"
                 android:layout_width="53dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/grayBlue_F0F2FA"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_house" />
+                app:srcCompat="@drawable/ic_house_solid" />
 
             <Space
                 android:layout_width="20dp"
                 android:layout_height="match_parent" />
 
             <ImageButton
-                android:id="@+id/patientMedicalProfessionalButton"
+                android:id="@+id/medicalProfileButton"
                 android:layout_width="53dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/grayBlue_F0F2FA"
@@ -433,19 +435,19 @@
                 android:layout_height="match_parent" />
 
             <ImageButton
-                android:id="@+id/patientAddStatusButton"
+                android:id="@+id/medicalPatientsButton"
                 android:layout_width="53dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/grayBlue_F0F2FA"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_circle_plus" />
+                app:srcCompat="@drawable/ic_users" />
 
             <Space
                 android:layout_width="20dp"
                 android:layout_height="match_parent" />
 
             <ImageButton
-                android:id="@+id/patientNotificationButton"
+                android:id="@+id/medicalNotificationButton"
                 android:layout_width="53dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/grayBlue_F0F2FA"
@@ -457,7 +459,7 @@
                 android:layout_height="match_parent" />
 
             <ImageButton
-                android:id="@+id/patientSettingsButton"
+                android:id="@+id/medicalSettingsButton"
                 android:layout_width="53dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="@color/grayBlue_F0F2FA"
