@@ -16,4 +16,10 @@
         <item>Day 9</item>
         <item>Day 10</item>
     </string-array>
+    <string name="title_activity_medical_professional_add_patient_form">
+        medicalProfessionalAddPatientForm
+    </string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
