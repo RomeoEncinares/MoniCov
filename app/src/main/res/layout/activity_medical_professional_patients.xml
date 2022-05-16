@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".medicalProfessionalPatientsActivity">
+
+    <!--header-->
+    <TextView
+        android:id="@+id/boxContainer"
+        android:layout_width="380dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textInBoxContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Good Day!"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/boxContainer"
+        app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="@+id/boxContainer"
+        app:layout_constraintTop_toTopOf="@+id/boxContainer"
+        app:layout_constraintVertical_bias="0.181" />
+
+    <TextView
+        android:id="@+id/firstNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="Firstname"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/boxContainer"
+        app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="@+id/boxContainer"
+        app:layout_constraintTop_toBottomOf="@+id/textInBoxContainer"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/circleInContainer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="@+id/boxContainer"
+        app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="@+id/boxContainer"
+        app:layout_constraintTop_toTopOf="@+id/boxContainer" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="MoniCov"
+        android:textColor="@color/moderateBlue_3347C4"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boxContainer" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="-12dp"
+        android:text="Patients"
+        android:textColor="@color/darkBlue_0C159F"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="List of Patients"
+        android:textColor="@color/moderateBlue_3347C4"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageButton
+        android:id="@+id/addPatientButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="60dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/textView22"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toTopOf="@+id/textView22"
+        app:srcCompat="@drawable/ic_user_plus" />
+
+    <TextView
+        android:id="@+id/iconNumberOfPatient"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/ic_user_group"
+        app:layout_constraintBottom_toBottomOf="@+id/addPatientButton"
+        app:layout_constraintStart_toEndOf="@+id/addPatientButton"
+        app:layout_constraintTop_toTopOf="@+id/addPatientButton" />
+
+    <TextView
+        android:id="@+id/viewTotalPatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="0"
+        android:textColor="@color/moderateBlue_5766C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iconNumberOfPatient"
+        app:layout_constraintStart_toEndOf="@+id/iconNumberOfPatient"
+        app:layout_constraintTop_toTopOf="@+id/iconNumberOfPatient" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:background="@color/grayBlue_F0F2FA"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <ImageButton
+            android:id="@+id/medicalHomeButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_house" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/medicalProfileButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_user_doctor" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/medicalPatientsButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_users_solid" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/medicalNotificationButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_bell" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/medicalSettingsButton"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/grayBlue_F0F2FA"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_gears" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,7 +37,24 @@
             android:name=".patientStatusDayActivity"
             android:exported="false" />
         <activity
-            android:name=".patientStatusListActivity"
+            android:name=".patientStatusListActivity"/>
+        <activity
+            android:name=".medicalProfessionalAddPatientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalSettingsAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalNotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalPatientsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalProfileActivity"
             android:exported="false" />
         <activity
             android:name=".patientStatusQuestionnaireActivity"
