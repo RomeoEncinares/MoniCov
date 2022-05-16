@@ -64,6 +64,19 @@
             app:layout_constraintStart_toStartOf="@+id/boxContainer"
             app:layout_constraintTop_toTopOf="@+id/boxContainer" />
 
+        <TextView
+            android:id="@+id/lastNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LN"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/circleInContainer"
+            app:layout_constraintEnd_toEndOf="@+id/circleInContainer"
+            app:layout_constraintStart_toStartOf="@+id/circleInContainer"
+            app:layout_constraintTop_toTopOf="@+id/circleInContainer" />
+
         <!--Content_1-->
         <ImageView
             android:id="@+id/imageView1"
