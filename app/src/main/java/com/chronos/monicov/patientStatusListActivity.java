@@ -76,9 +76,15 @@ public class patientStatusListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String chosenDay = adapterView.getItemAtPosition(i).toString();
-                Intent passData = new Intent(getBaseContext(), patientStatusDayActivity.class);
-                passData.putExtra("Day", chosenDay);
-                startActivity(passData);
+
+                if(chosenDay.equals("Initial Screening")){
+                    startActivity(new Intent(patientStatusListActivity.this, patientStatusInitialActivity.class));
+                }
+                else{
+                    Intent passData = new Intent(getBaseContext(), patientStatusDayActivity.class);
+                    passData.putExtra("Day", chosenDay);
+                    startActivity(passData);
+                }
             }
         });
     }
