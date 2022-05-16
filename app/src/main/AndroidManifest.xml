@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoniCov">
         <activity
+            android:name=".medicalProfessionalPatientStatusDayListActivity"
+            android:exported="false" />
+        <activity
             android:name=".patientStatusInitialActivity"
             android:exported="false" />
         <activity
