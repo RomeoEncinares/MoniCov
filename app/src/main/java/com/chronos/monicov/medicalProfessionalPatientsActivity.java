@@ -86,7 +86,7 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String chosenPatient = adapterView.getItemAtPosition(i).toString();
-                Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientStatusDayListActivity.class);
+                Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientStatusLandingActivity.class);
                 passData.putExtra("patient", chosenPatient);
                 startActivity(passData);
             }
