@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".patientStatusInitialActivity">
+
+        <TextView
+            android:id="@+id/statusContainer"
+            android:layout_width="320dp"
+            android:layout_height="870dp"
+            android:background="@drawable/boxoutline"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="28dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Initial Screening"
+            android:textColor="@color/darkBlue_0C159F"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/statusContainer"
+            app:layout_constraintEnd_toEndOf="@+id/statusContainer"
+            app:layout_constraintStart_toStartOf="@+id/statusContainer"
+            app:layout_constraintTop_toTopOf="@+id/statusContainer"
+            app:layout_constraintVertical_bias="0.036" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Summary"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/textQuestion1"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:text="1. Have you been tested positive for COVID-19 in the past 2 weeks??"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/statusContainer"
+            app:layout_constraintStart_toStartOf="@+id/statusContainer"
+            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+        <TextView
+            android:id="@+id/answerOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Yes/No"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion1"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion1"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion1" />
+
+        <TextView
+            android:id="@+id/textQuestion2"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:text="2. Have you been asked to quarantine in the past 2 weeks?"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/answerOne"
+            app:layout_constraintStart_toStartOf="@+id/answerOne"
+            app:layout_constraintTop_toBottomOf="@+id/answerOne"/>
+
+        <TextView
+            android:id="@+id/answerTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Yes/No"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion2"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion2"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion2" />
+
+        <TextView
+            android:id="@+id/textQuestion3"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:text="3. Have you been in close contact or exposed to someone who has COVID-19 in the past 2 weeks??"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/answerTwo"
+            app:layout_constraintStart_toStartOf="@+id/answerTwo"
+            app:layout_constraintTop_toBottomOf="@+id/answerTwo"/>
+
+        <TextView
+            android:id="@+id/answerThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Yes/No"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion3"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion3"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion3" />
+
+        <TextView
+            android:id="@+id/textQuestion4"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="4. Have you or anyone in your household been tested for COVID-19 recently? "
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/answerThree"
+            app:layout_constraintStart_toStartOf="@+id/answerThree"
+            app:layout_constraintTop_toBottomOf="@+id/answerThree"/>
+
+        <TextView
+            android:id="@+id/answerFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Yes/No"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion4"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion4"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion4" />
+
+        <TextView
+            android:id="@+id/textQuestion5"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="5. Have you completed all your doses for the covid vaccine?"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/answerFour"
+            app:layout_constraintStart_toStartOf="@+id/answerFour"
+            app:layout_constraintTop_toBottomOf="@+id/answerFour" />
+
+        <TextView
+            android:id="@+id/answerFive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Yes/No"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion5"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion5"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion5" />
+
+        <TextView
+            android:id="@+id/textQuestion6"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="6. Do you suffer from any of the following? Diabetes, cardiovascular disease, including hypertension, chronic lung disease, immunodeficiency,cancer under active treatment?"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/answerFive"
+            app:layout_constraintStart_toStartOf="@+id/answerFive"
+            app:layout_constraintTop_toBottomOf="@+id/answerFive" />
+
+        <TextView
+            android:id="@+id/answerSix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Yes/No"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/textQuestion6"
+            app:layout_constraintStart_toStartOf="@+id/textQuestion6"
+            app:layout_constraintTop_toBottomOf="@+id/textQuestion6" />
+
+        <TextView
+            android:id="@+id/answerSixComorbidities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Comorbidities"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/answerSix"
+            app:layout_constraintStart_toStartOf="@+id/answerSix"
+            app:layout_constraintTop_toBottomOf="@+id/answerSix" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
