@@ -73,6 +73,8 @@ public class medicalProfessionalProfileActivity extends AppCompatActivity {
         String currentUser = getCurrentMedical();
         queryData(currentUser);
 
+        checkProfile(currentUser);
+
         updateButton.setOnClickListener(view -> {
             addMedicalProfessionalProfile(currentUser);
         });
@@ -167,5 +169,97 @@ public class medicalProfessionalProfileActivity extends AppCompatActivity {
         String targetReference = reference.replace(".", "");
         parentMedicalNode = mDatabase.child(targetReference);
         parentMedicalNode.updateChildren(patientProfile);
+    }
+
+    public void checkProfile(String reference){
+        String emailKey = reference.replace(".", "");
+        mDatabase = FirebaseDatabase.getInstance().getReference("Medical Professional").child(emailKey);
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                HashMap<String, String> map = (HashMap<String, String>) snapshot.getValue();
+                String bio = map.get("bio");
+                String age = map.get("age");
+                String gender = map.get("gender");
+                String contact = map.get("contact");
+                String birthDate = map.get("birthdate");
+                String address = map.get("address");
+                String patientNumber = map.get("patientNumber");
+                String experience = map.get("experience");
+                String hospitalName = map.get("hospitalName");
+                String hospitalAddress = map.get("hospitalAddress");
+                String hospitalContactNumber = map.get("hospitalContactNumber");
+                String vaccineCardNumber = map.get("vaccineCardNumber");
+                String vaccineBrand = map.get("vaccineName");
+                String vaccineDate1 = map.get("vaccineDate1");
+                String vaccineDate2 = map.get("vaccineDate2");
+                String healthFacility = map.get("healthFacility");
+
+                setProfileHint(bio, age, gender, contact, birthDate, address, patientNumber, experience,
+                        hospitalName, hospitalAddress, hospitalContactNumber, vaccineCardNumber,
+                        vaccineBrand, vaccineDate1, vaccineDate2, healthFacility);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void setProfileHint(String bio, String age, String gender, String contact, String birthDate,
+                               String address, String patientNumber, String experience, String hospitalName,
+                               String hospitalAddress, String hospitalContactNumber, String vaccineCardNumber,
+                               String vaccineBrand, String vaccineDate1, String vaccineDate2,
+                               String healthFacility){
+        if(bio != null){
+            bioField.setText(bio);
+        }
+        if (age != null){
+            ageField.setText(age);
+        }
+        if (gender != null){
+            genderField.setText(gender);
+        }
+        if(contact != null){
+            contactNumberField.setText(contact);
+        }
+        if (birthDate != null){
+            System.out.println(birthDate);
+            birthDateField.setText(birthDate);
+        }
+        if (address != null){
+            addressField.setText(address);
+        }
+        if (patientNumber != null){
+            patientsNumberField.setText(patientNumber);
+        }
+        if (experience != null){
+            experienceField.setText(experience);
+        }
+        if (hospitalName != null){
+            hospitalNameField.setText(hospitalName);
+        }
+        if (hospitalAddress != null){
+            hospitalAddressField.setText(hospitalAddress);
+        }
+        if (vaccineBrand != null){
+            vaccineBrandField.setText(vaccineBrand);
+        }
+        if (hospitalContactNumber != null){
+            hospitalContactNumberField.setText(hospitalContactNumber);
+        }
+        if (vaccineCardNumber != null){
+            vaccineCardNumberField.setText(vaccineCardNumber);
+        }
+        if (vaccineDate1 != null){
+            vaccineDate1Field.setText(vaccineDate1);
+        }
+        if (vaccineDate2 != null){
+            vaccineDate2Field.setText(vaccineDate2);
+        }
+        if (healthFacility != null){
+            healthFacilityField.setText(healthFacility);
+        }
     }
 }
