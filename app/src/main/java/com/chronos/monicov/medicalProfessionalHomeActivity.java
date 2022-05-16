@@ -81,7 +81,7 @@ public class medicalProfessionalHomeActivity extends AppCompatActivity {
                 String lastName = map.get("lastname");
                 char lastNameChar = lastName.charAt(0);
 
-                firstNameTextField.setText("Dr. " + firstName);
+                firstNameTextField.setText(firstName);
                 lastNameTextField.setText(String.valueOf(lastNameChar));
             }
 
