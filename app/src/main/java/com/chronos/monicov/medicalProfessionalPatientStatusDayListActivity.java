@@ -80,7 +80,9 @@ public class medicalProfessionalPatientStatusDayListActivity extends AppCompatAc
                     startActivity(new Intent(medicalProfessionalPatientStatusDayListActivity.this, patientStatusInitialActivity.class));
                 }
                 else{
-                    Intent passData = new Intent(getBaseContext(), patientStatusDayActivity.class);
+                    Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientStatusDayActivity.class);
+                    passData.putExtra("email", targetReference);
+                    System.out.println(targetReference);
                     passData.putExtra("Day", chosenDay);
                     startActivity(passData);
                 }
