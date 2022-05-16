@@ -19,6 +19,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoniCov">
         <activity
+            android:name=".patientStatusInitialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patientInitialScreeningActivity"
+            android:exported="false" />
+        <activity
             android:name=".acquaintancePatientStatusActivity"
             android:exported="false" />
         <activity
@@ -36,8 +42,7 @@
         <activity
             android:name=".patientStatusDayActivity"
             android:exported="false" />
-        <activity
-            android:name=".patientStatusListActivity"/>
+        <activity android:name=".patientStatusListActivity" />
         <activity
             android:name=".medicalProfessionalAddPatientActivity"
             android:exported="false" />
