@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoniCov">
         <activity
+            android:name=".medicalProfessionalAddPatientActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalSettingsAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalNotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalPatientsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".medicalProfessionalProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".patientStatusQuestionnaireActivity"
             android:exported="false" />
         <activity
