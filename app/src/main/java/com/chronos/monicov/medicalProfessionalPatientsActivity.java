@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -55,7 +57,6 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 String value = snapshot.getKey();
-                System.out.println(value);
                 patientList.add(value);
                 patientListAdapter.notifyDataSetChanged();
             }
@@ -78,6 +79,16 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        patientListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String chosenPatient = adapterView.getItemAtPosition(i).toString();
+                Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientStatusDayListActivity.class);
+                passData.putExtra("patient", chosenPatient);
+                startActivity(passData);
             }
         });
 
