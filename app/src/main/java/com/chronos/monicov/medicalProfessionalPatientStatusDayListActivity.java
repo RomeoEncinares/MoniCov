@@ -77,7 +77,10 @@ public class medicalProfessionalPatientStatusDayListActivity extends AppCompatAc
                 String chosenDay = adapterView.getItemAtPosition(i).toString();
 
                 if(chosenDay.equals("Initial Screening")){
-                    startActivity(new Intent(medicalProfessionalPatientStatusDayListActivity.this, patientStatusInitialActivity.class));
+                    Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientStatusInitialActivity.class);
+                    passData.putExtra("email", targetReference);
+                    System.out.println(targetReference);
+                    startActivity(passData);
                 }
                 else{
                     Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientStatusDayActivity.class);
