@@ -19,13 +19,13 @@
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Medicine Name: "
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Medicine Name: "-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold"/>-->
 
             <TextView
                 android:id="@+id/tvMedicineName"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text="Medicine "
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"/>
         </LinearLayout>
 
@@ -43,22 +43,22 @@
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Medicine Duration: "
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Duration: "-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="26sp"-->
+<!--                android:textStyle="bold"/>-->
 
             <TextView
                 android:id="@+id/tvMedicineDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Duration "
+                android:text="X Week"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textSize="18sp"
+                android:textStyle="italic"/>
         </LinearLayout>
 
         <LinearLayout
@@ -67,22 +67,22 @@
             android:layout_gravity="center_vertical"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Medicine Name: "
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                android:textStyle="bold"/>
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Frequency: "-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="26sp"-->
+<!--                android:textStyle="bold"/>-->
 
             <TextView
                 android:id="@+id/tvMedicineTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Time "
+                android:text="X Daily"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textSize="18sp"
+                android:textStyle="italic"/>
         </LinearLayout>
 
     </LinearLayout>
