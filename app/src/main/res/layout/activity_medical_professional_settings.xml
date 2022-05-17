@@ -319,18 +319,6 @@
             android:layout_height="match_parent" />
 
         <ImageButton
-            android:id="@+id/medicalNotificationButton"
-            android:layout_width="53dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/grayBlue_F0F2FA"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_bell" />
-
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="match_parent" />
-
-        <ImageButton
             android:id="@+id/medicalSettingsButton"
             android:layout_width="53dp"
             android:layout_height="match_parent"
