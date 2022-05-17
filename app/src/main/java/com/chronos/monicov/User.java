@@ -37,4 +37,22 @@ public class User {
     public String getUserType() {
         return userType;
     }
+
+    public static class Prescription {
+        String medicineName;
+        String medicineDuration;
+        String medicineTime;
+
+        public String getMedicineName() {
+            return medicineName;
+        }
+
+        public String getMedicineDuration() {
+            return medicineDuration;
+        }
+
+        public String getMedicineTime() {
+            return medicineTime;
+        }
+    }
 }
