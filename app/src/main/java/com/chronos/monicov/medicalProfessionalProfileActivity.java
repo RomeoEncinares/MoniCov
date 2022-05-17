@@ -26,7 +26,7 @@ public class medicalProfessionalProfileActivity extends AppCompatActivity {
     private FirebaseDatabase database;
 
     Button updateButton;
-    ImageButton homeButton, profileButton, medicalProfessionalButton, settingsButton, patientsButton;
+    ImageButton homeButton, profileButton, settingsButton, patientsButton;
     TextView firstNameTextField, lastNameTextField, nameInitialTextField;
     TextInputEditText bioField, ageField, contactNumberField, genderField, birthDateField, addressField,
         patientsNumberField, experienceField, hospitalNameField, hospitalAddressField,
@@ -48,7 +48,6 @@ public class medicalProfessionalProfileActivity extends AppCompatActivity {
         homeButton = findViewById(R.id.medicalHomeButton);
         profileButton = findViewById(R.id.medicalProfileButton);
         patientsButton = findViewById(R.id.medicalPatientsButton);
-        medicalProfessionalButton = findViewById(R.id.medicalNotificationButton);
         settingsButton = findViewById(R.id.medicalSettingsButton);
 
         bioField = findViewById(R.id.describeYourself);
@@ -89,10 +88,6 @@ public class medicalProfessionalProfileActivity extends AppCompatActivity {
 
         patientsButton.setOnClickListener(view -> {
             startActivity(new Intent(medicalProfessionalProfileActivity.this, medicalProfessionalPatientsActivity.class));
-        });
-
-        medicalProfessionalButton.setOnClickListener(view -> {
-            startActivity(new Intent(medicalProfessionalProfileActivity.this, medicalProfessionalNotificationsActivity.class));
         });
 
         settingsButton.setOnClickListener(view -> {
