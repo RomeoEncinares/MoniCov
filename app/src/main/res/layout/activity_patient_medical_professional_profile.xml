@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/medicalProfessionalAboutView"
         android:layout_width="368dp"
         android:layout_height="85dp"
         android:layout_marginTop="8dp"
@@ -114,16 +114,20 @@
         android:textColor="@color/moderateBlue_3347C4"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="@+id/medicalProfessionalAboutView"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintStart_toStartOf="@+id/medicalProfessionalAboutView"
+        app:layout_constraintTop_toBottomOf="@+id/medicalProfessionalAboutView" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/medicalProfessionalHospitalName"
         android:layout_width="368dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Hospital Name"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         android:background="@drawable/boxoutline"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout8"
         app:layout_constraintHorizontal_bias="0.0"
@@ -131,26 +135,34 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/medicalProfessionalHospitalAddress"
         android:layout_width="368dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Hospital Address"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         android:background="@drawable/boxoutline"
-        app:layout_constraintEnd_toEndOf="@+id/textView18"
+        app:layout_constraintEnd_toEndOf="@+id/medicalProfessionalHospitalName"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintStart_toStartOf="@+id/medicalProfessionalHospitalName"
+        app:layout_constraintTop_toBottomOf="@+id/medicalProfessionalHospitalName" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/medicalProfessionalHospitalContactNumber"
         android:layout_width="368dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Hospital Contact Number"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         android:background="@drawable/boxoutline"
-        app:layout_constraintEnd_toEndOf="@+id/textView19"
+        app:layout_constraintEnd_toEndOf="@+id/medicalProfessionalHospitalAddress"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        app:layout_constraintStart_toStartOf="@+id/medicalProfessionalHospitalAddress"
+        app:layout_constraintTop_toBottomOf="@+id/medicalProfessionalHospitalAddress" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnViewPrescription"
@@ -160,11 +172,9 @@
         android:backgroundTint="@color/darkBlue_0C159F"
         android:text="View Prescriptions"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/textView20"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/medicalProfessionalHospitalContactNumber"
+        app:layout_constraintStart_toStartOf="@+id/medicalProfessionalHospitalContactNumber"
+        app:layout_constraintTop_toBottomOf="@+id/medicalProfessionalHospitalContactNumber" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -242,12 +252,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5   "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10">
+        app:layout_constraintTop_toBottomOf="@+id/medicalProfessionalAboutView">
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/medicalProfessionalGender"
             android:layout_width="179dp"
             android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Gender"
+            android:textSize="15sp"
+            android:textColor="@color/black"
             android:background="@drawable/boxoutline" />
 
         <Space
@@ -255,9 +269,13 @@
             android:layout_height="match_parent" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/medicalProfessionalAge"
             android:layout_width="179dp"
             android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Age"
+            android:textSize="15sp"
+            android:textColor="@color/black"
             android:background="@drawable/boxoutline" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
