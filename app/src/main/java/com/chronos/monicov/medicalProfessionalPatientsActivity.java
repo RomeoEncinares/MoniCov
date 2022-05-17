@@ -28,7 +28,7 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
     ArrayList<String> patientList = new ArrayList<>();
     DatabaseReference mDatabase, patientListNode, currentPatientNode;
     FirebaseAuth mAuth;
-    ImageButton homeButton, profileButton, medicalProfessionalButton, settingsButton, patientsButton, addPatient;
+    ImageButton homeButton, profileButton, settingsButton, patientsButton, addPatient;
     TextView patientCount;
 
     @Override
@@ -45,7 +45,6 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
         homeButton = findViewById(R.id.medicalHomeButton);
         profileButton = findViewById(R.id.medicalProfileButton);
         patientsButton = findViewById(R.id.medicalPatientsButton);
-        medicalProfessionalButton = findViewById(R.id.medicalNotificationButton);
         settingsButton = findViewById(R.id.medicalSettingsButton);
 
 //        addPatient = findViewById(R.id.addPatientButton);
@@ -108,10 +107,6 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
 
         patientsButton.setOnClickListener(view -> {
             startActivity(new Intent(medicalProfessionalPatientsActivity.this, medicalProfessionalPatientsActivity.class));
-        });
-
-        medicalProfessionalButton.setOnClickListener(view -> {
-            startActivity(new Intent(medicalProfessionalPatientsActivity.this, medicalProfessionalNotificationsActivity.class));
         });
 
         settingsButton.setOnClickListener(view -> {
