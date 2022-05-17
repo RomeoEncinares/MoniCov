@@ -27,7 +27,7 @@ public class patientProfileActivity extends AppCompatActivity {
 
     Button updateButton;
     ImageButton homeButton, profileButton, statusButton, medicalProfessionalButton, settingsButton;
-    TextView firstNameTextField, lastNameTextField, lastNameInitialTextField;
+    TextView firstNameTextField, lastNameInitialTextField;
     TextInputEditText contactNumberField, ageField, genderField, birthDateField, addressField, vaccineNameField,
             vaccineDate1Field, vaccineDate2Field;
 
@@ -46,7 +46,6 @@ public class patientProfileActivity extends AppCompatActivity {
         settingsButton = findViewById(R.id.patientSettingsButton);
 
         firstNameTextField = findViewById(R.id.firstNameText);
-        lastNameTextField = findViewById(R.id.lastNameText);
         lastNameInitialTextField = findViewById(R.id.etLastNameInitial);
         contactNumberField = findViewById(R.id.etcontactNumber);
         ageField = findViewById(R.id.etAge);
@@ -104,7 +103,6 @@ public class patientProfileActivity extends AppCompatActivity {
                 char lastNameChar = lastName.charAt(0);
 
                 firstNameTextField.setText(firstName);
-                lastNameTextField.setText(lastName);
                 lastNameInitialTextField.setText(String.valueOf(lastNameChar));
             }
 
