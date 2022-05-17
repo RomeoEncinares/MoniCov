@@ -16,59 +16,27 @@
 
         <TextView
             android:id="@+id/container"
-            android:layout_width="376dp"
-            android:layout_height="178dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="340dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/box"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
 
         <TextView
             android:id="@+id/circleContainer"
-            android:layout_width="97dp"
-            android:layout_height="97dp"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/circle"
             app:layout_constraintBottom_toBottomOf="@+id/container"
             app:layout_constraintEnd_toEndOf="@+id/container"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="@+id/container"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/firstNameText"
             app:layout_constraintTop_toTopOf="@+id/container"
-            app:layout_constraintVertical_bias="0.185" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/container"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/circleContainer">
-
-            <TextView
-                android:id="@+id/firstNameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="FirstName"
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="10dp"
-                android:layout_height="match_parent" />
-
-            <TextView
-                android:id="@+id/lastNameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LastName"
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-        </LinearLayout>
+            app:layout_constraintVertical_bias="0.615"  />
 
         <TextView
             android:id="@+id/etLastNameInitial"
@@ -76,13 +44,41 @@
             android:layout_height="wrap_content"
             android:text="LN"
             android:textColor="@color/black"
-            android:textSize="48dp"
+            android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/circleContainer"
             app:layout_constraintEnd_toEndOf="@+id/circleContainer"
             app:layout_constraintStart_toStartOf="@+id/circleContainer"
             app:layout_constraintTop_toTopOf="@+id/circleContainer" />
 
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/container"
+            app:layout_constraintEnd_toEndOf="@+id/container"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintStart_toStartOf="@+id/container"
+            app:layout_constraintTop_toTopOf="@+id/container"
+            app:layout_constraintVertical_bias="0.17" />
+
+        <TextView
+            android:id="@+id/firstNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Firstname"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/container"
+            app:layout_constraintEnd_toEndOf="@+id/textView16"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView16"
+            app:layout_constraintTop_toBottomOf="@+id/textView16"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textView12"
@@ -95,7 +91,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.042"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/container"
             app:layout_constraintTop_toBottomOf="@+id/container" />
 
         <com.google.android.material.textfield.TextInputEditText
@@ -105,8 +101,9 @@
             android:layout_marginTop="16dp"
             android:hint="Contact Number"
             android:inputType="phone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView12"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView12"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <LinearLayout
@@ -173,20 +170,21 @@
             android:textColor="@color/moderateBlue_3347C4"
             android:textSize="18dp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.037"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/etAddress"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/etAddress"
             app:layout_constraintTop_toBottomOf="@+id/etAddress" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etVaccineName"
             android:layout_width="315dp"
             android:layout_height="45dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:hint="Vaccine Name"
             android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView13"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
         <LinearLayout
@@ -234,17 +232,6 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
             app:layout_constraintVertical_bias="0.062" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Patient"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            app:layout_constraintBottom_toBottomOf="@+id/container"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout5"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
