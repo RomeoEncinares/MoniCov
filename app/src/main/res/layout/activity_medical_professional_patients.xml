@@ -98,16 +98,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameMedicalText" />
 
-    <ImageButton
-        android:id="@+id/addPatientButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="60dp"
-        android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/textView22"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toTopOf="@+id/textView22"
-        app:srcCompat="@drawable/ic_user_plus" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/addPatientButton"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginStart="60dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/textView22"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/textView22"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/textView22"-->
+<!--        app:srcCompat="@drawable/ic_user_plus" />-->
 
     <TextView
         android:id="@+id/iconNumberOfPatient"
@@ -115,9 +115,9 @@
         android:layout_height="27dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/ic_user_group"
-        app:layout_constraintBottom_toBottomOf="@+id/addPatientButton"
-        app:layout_constraintStart_toEndOf="@+id/addPatientButton"
-        app:layout_constraintTop_toTopOf="@+id/addPatientButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView22"
+        app:layout_constraintStart_toEndOf="@+id/textView22"
+        app:layout_constraintTop_toTopOf="@+id/textView22" />
 
     <TextView
         android:id="@+id/viewTotalPatient"
