@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 public class medicalProfessionalSettingsActivity extends AppCompatActivity {
 
-    ImageButton homeButton, profileButton, medicalProfessionalButton, settingsButton, patientsButton, accountButton;
+    ImageButton homeButton, profileButton, settingsButton, patientsButton, accountButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +18,6 @@ public class medicalProfessionalSettingsActivity extends AppCompatActivity {
         homeButton = findViewById(R.id.medicalHomeButton);
         profileButton = findViewById(R.id.medicalProfileButton);
         patientsButton = findViewById(R.id.medicalPatientsButton);
-        medicalProfessionalButton = findViewById(R.id.medicalNotificationButton);
         settingsButton = findViewById(R.id.medicalSettingsButton);
 
         accountButton = findViewById(R.id.angleRightbutton);
@@ -33,10 +32,6 @@ public class medicalProfessionalSettingsActivity extends AppCompatActivity {
 
         patientsButton.setOnClickListener(view -> {
             startActivity(new Intent(medicalProfessionalSettingsActivity.this, medicalProfessionalPatientsActivity.class));
-        });
-
-        medicalProfessionalButton.setOnClickListener(view -> {
-            startActivity(new Intent(medicalProfessionalSettingsActivity.this, medicalProfessionalNotificationsActivity.class));
         });
 
         settingsButton.setOnClickListener(view -> {
