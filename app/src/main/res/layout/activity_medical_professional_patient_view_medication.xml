@@ -10,18 +10,82 @@
         android:layout_height="match_parent"
         tools:context=".medicalProfessionalPatientViewMedicationActivity">
 
+        <TextView
+            android:id="@+id/boxContainer"
+            android:layout_width="380dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textInBoxContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/boxContainer"
+            app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/boxContainer"
+            app:layout_constraintTop_toBottomOf="@+id/firstNameText"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/firstNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="left"
+            android:text="Firstname"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+            app:layout_constraintHorizontal_bias="0.114"
+            app:layout_constraintStart_toStartOf="@+id/boxContainer"
+            app:layout_constraintTop_toTopOf="@+id/boxContainer" />
+
+        <TextView
+            android:id="@+id/circleInContainer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="@+id/boxContainer"
+            app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+            app:layout_constraintHorizontal_bias="0.944"
+            app:layout_constraintStart_toStartOf="@+id/boxContainer"
+            app:layout_constraintTop_toTopOf="@+id/boxContainer" />
+
+        <TextView
+            android:id="@+id/lastNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LN"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/circleInContainer"
+            app:layout_constraintEnd_toEndOf="@+id/circleInContainer"
+            app:layout_constraintStart_toStartOf="@+id/circleInContainer"
+            app:layout_constraintTop_toTopOf="@+id/circleInContainer" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddMedication"
             android:layout_width="315dp"
             android:layout_height="45dp"
-            android:layout_marginTop="20dp"
             android:backgroundTint="@color/darkBlue_0C159F"
             android:gravity="center"
             android:text="Add Prescriptions"
+            android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+            app:layout_constraintStart_toStartOf="@+id/boxContainer"
+            app:layout_constraintTop_toBottomOf="@+id/boxContainer"
             app:layout_constraintVertical_bias="0.039" />
 
         <TextView
