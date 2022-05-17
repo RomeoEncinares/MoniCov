@@ -384,15 +384,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
-        android:text="Firstname"
         android:gravity="left"
+        android:text="Firstname"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/boxContainer"
-        app:layout_constraintEnd_toEndOf="@+id/boxContainer"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="@+id/boxContainer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textInBoxContainer"
         app:layout_constraintTop_toBottomOf="@+id/textInBoxContainer"
         app:layout_constraintVertical_bias="0.0" />
 
