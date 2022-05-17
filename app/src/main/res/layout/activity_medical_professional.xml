@@ -9,19 +9,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".medicalProfessionalHomeActivity">
+        tools:context=".patientHomeActivity">
 
         <!--header-->
         <TextView
             android:id="@+id/boxContainer"
-            android:layout_width="380dp"
+            android:layout_width="340dp"
             android:layout_height="66dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/box"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/textInBoxContainer"
@@ -43,6 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:text="Firstname"
+            android:gravity="left"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -78,48 +78,48 @@
             app:layout_constraintTop_toTopOf="@+id/circleInContainer" />
 
         <!--Content_1-->
+
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="250dp"
+            android:layout_width="360dp"
+            android:layout_height="231dp"
             android:layout_marginTop="64dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/boxContainer"
+            app:layout_constraintHorizontal_bias="0.549"
+            app:layout_constraintStart_toStartOf="@+id/boxContainer"
             app:layout_constraintTop_toBottomOf="@+id/boxContainer"
             app:srcCompat="@drawable/home_image1" />
 
         <TextView
-            android:id="@+id/firstNameMedicalText"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
             android:text="MoniCov"
             android:textColor="@color/darkBlue_0C159F"
             android:textSize="50sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/imageView1"
-            app:layout_constraintHorizontal_bias="0.027"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageView1"
             app:layout_constraintTop_toBottomOf="@+id/imageView1" />
 
+        <!--content 1 small circles-->
+
         <TextView
-            android:id="@+id/lastNameMedicalText"
+            android:id="@+id/textView3"
             android:layout_width="374dp"
             android:layout_height="136dp"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:text="This application is a COVID-19 quarantine isolation monitoring system that will substantially aid in the administration of quarantine and isolation of disease-affected patients. It is a user-friendly smartphone application that is available to everyone. Medical practitioners will be able to better monitor their patients wherever they are quarantined or isolated."
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/firstNameMedicalText" />
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <!--content 1 small circles-->
         <LinearLayout
             android:id="@+id/linearLayout9"
             android:layout_width="match_parent"
@@ -128,7 +128,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lastNameMedicalText">
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <TextView
                 android:layout_width="15dp"
@@ -162,7 +162,7 @@
         <!--content 2-->
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
+            android:layout_width="360dp"
             android:layout_height="250dp"
             android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -186,22 +186,23 @@
             app:layout_constraintStart_toStartOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
+        <!--content 2 small circles-->
+
         <TextView
             android:id="@+id/textView10"
             android:layout_width="374dp"
             android:layout_height="136dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             android:gravity="center"
             android:text="This application is a COVID-19 quarantine isolation monitoring system that will substantially aid in the administration of quarantine and isolation of disease-affected patients. It is a user-friendly smartphone application that is available to everyone. Medical practitioners will be able to better monitor their patients wherever they are quarantined or isolated."
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView4"
+            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-        <!--content 2 small circles-->
         <LinearLayout
             android:id="@+id/linearLayout10"
             android:layout_width="match_parent"
@@ -244,7 +245,7 @@
         <!--content 3-->
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
+            android:layout_width="360dp"
             android:layout_height="250dp"
             android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -256,34 +257,33 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="21dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:text="Medical Professional"
             android:textColor="@color/darkBlue_0C159F"
             android:textSize="35sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView3"
             app:layout_constraintHorizontal_bias="0.818"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
             app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
+        <!--content 3 small circles-->
         <TextView
             android:id="@+id/textView13"
             android:layout_width="374dp"
             android:layout_height="136dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:gravity="right"
             android:text="This application is a COVID-19 quarantine isolation monitoring system that will substantially aid in the administration of quarantine and isolation of disease-affected patients. It is a user-friendly smartphone application that is available to everyone. Medical practitioners will be able to better monitor their patients wherever they are quarantined or isolated."
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView11"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/textView11"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-        <!--content 3 small circles-->
         <LinearLayout
             android:id="@+id/linearLayout13"
             android:layout_width="match_parent"
@@ -324,12 +324,14 @@
         </LinearLayout>
 
         <!--content 4-->
+
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
+            android:layout_width="360dp"
             android:layout_height="250dp"
             android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout13"
             app:srcCompat="@drawable/home_image4" />
@@ -338,34 +340,32 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="Acquaintance"
             android:textColor="@color/darkBlue_0C159F"
             android:textSize="50sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
             app:layout_constraintHorizontal_bias="0.076"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
+        <!--content 4 small circles-->
         <TextView
             android:id="@+id/textView15"
             android:layout_width="374dp"
             android:layout_height="136dp"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="This application is a COVID-19 quarantine isolation monitoring system that will substantially aid in the administration of quarantine and isolation of disease-affected patients. It is a user-friendly smartphone application that is available to everyone. Medical practitioners will be able to better monitor their patients wherever they are quarantined or isolated."
             android:textColor="@color/black"
             android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.285"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView14"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textView14"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
-        <!--content 4 small circles-->
         <LinearLayout
             android:id="@+id/linearLayout14"
             android:layout_width="match_parent"
