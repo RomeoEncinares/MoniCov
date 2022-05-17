@@ -37,7 +37,6 @@ public class medicalProfessionalHomeActivity extends AppCompatActivity {
         homeButton = findViewById(R.id.medicalHomeButton);
         profileButton = findViewById(R.id.medicalProfileButton);
         patientsButton = findViewById(R.id.medicalPatientsButton);
-        medicalProfessionalButton = findViewById(R.id.medicalNotificationButton);
         settingsButton = findViewById(R.id.medicalSettingsButton);
 
         firstNameTextField = findViewById(R.id.firstNameText);
@@ -56,11 +55,7 @@ public class medicalProfessionalHomeActivity extends AppCompatActivity {
         patientsButton.setOnClickListener(view -> {
             startActivity(new Intent(medicalProfessionalHomeActivity.this, medicalProfessionalPatientsActivity.class));
         });
-
-        medicalProfessionalButton.setOnClickListener(view -> {
-            startActivity(new Intent(medicalProfessionalHomeActivity.this, medicalProfessionalNotificationsActivity.class));
-        });
-
+        
         settingsButton.setOnClickListener(view -> {
             startActivity(new Intent(medicalProfessionalHomeActivity.this, medicalProfessionalSettingsActivity.class));
         });
