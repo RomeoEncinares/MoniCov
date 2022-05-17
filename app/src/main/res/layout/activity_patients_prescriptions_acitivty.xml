@@ -7,84 +7,18 @@
     tools:context=".patientsPrescriptionsAcitivty">
 
     <TextView
-        android:id="@+id/textTopContainer"
-        android:layout_width="340dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/box"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello"
-        android:textSize="16dp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/textTopContainer"
-        app:layout_constraintEnd_toEndOf="@+id/textTopContainer"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toStartOf="@+id/textTopContainer"
-        app:layout_constraintTop_toTopOf="@+id/textTopContainer"
-        app:layout_constraintVertical_bias="0.17" />
-
-    <TextView
-        android:id="@+id/firstNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Firstname"
-        android:textColor="@color/white"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textTopContainer"
-        app:layout_constraintEnd_toEndOf="@+id/textView16"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/circleContainer"
-        android:layout_width="53dp"
-        android:layout_height="53dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/circle"
-        app:layout_constraintBottom_toBottomOf="@+id/textTopContainer"
-        app:layout_constraintEnd_toEndOf="@+id/textTopContainer"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/firstNameText"
-        app:layout_constraintTop_toTopOf="@+id/textTopContainer"
-        app:layout_constraintVertical_bias="0.615" />
-
-    <TextView
-        android:id="@+id/nameInitial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FL"
-        android:textColor="@color/black"
-        android:textSize="32dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/circleContainer"
-        app:layout_constraintEnd_toEndOf="@+id/circleContainer"
-        app:layout_constraintStart_toStartOf="@+id/circleContainer"
-        app:layout_constraintTop_toTopOf="@+id/circleContainer" />
-
-    <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:text="MoniCov"
         android:textColor="@color/moderateBlue_3347C4"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textTopContainer"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textTopContainer"
-        app:layout_constraintTop_toBottomOf="@+id/textTopContainer" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView27"
@@ -108,72 +42,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="53dp"
-        android:background="@color/grayBlue_F0F2FA"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp" >
-
-        <ImageButton
-            android:id="@+id/patientHomeButton"
-            android:layout_width="53dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/grayBlue_F0F2FA"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_house" />
-
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="match_parent" />
-
-        <ImageButton
-            android:id="@+id/patientProfileButton"
-            android:layout_width="53dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/grayBlue_F0F2FA"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_user" />
-
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="match_parent" />
-
-        <ImageButton
-            android:id="@+id/patientAddStatusButton"
-            android:layout_width="53dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/grayBlue_F0F2FA"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_circle_plus" />
-
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="match_parent" />
-
-        <ImageButton
-            android:id="@+id/patientMedicalButton"
-            android:layout_width="53dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/grayBlue_F0F2FA"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_user_doctor" />
-
-        <Space
-            android:layout_width="20dp"
-            android:layout_height="match_parent" />
-
-        <ImageButton
-            android:id="@+id/patientSettingsButton"
-            android:layout_width="53dp"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/grayBlue_F0F2FA"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_gears" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
