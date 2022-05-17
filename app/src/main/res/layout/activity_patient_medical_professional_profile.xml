@@ -153,12 +153,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnUpdate"
+        android:id="@+id/btnViewPrescription"
         android:layout_width="315dp"
         android:layout_height="45dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/darkBlue_0C159F"
-        android:text="See Prescriptions"
+        android:text="View Prescriptions"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="@+id/textView20"
         app:layout_constraintHorizontal_bias="0.49"
