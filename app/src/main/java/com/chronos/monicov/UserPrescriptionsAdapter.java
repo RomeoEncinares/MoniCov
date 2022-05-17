@@ -15,9 +15,9 @@ public class UserPrescriptionsAdapter extends RecyclerView.Adapter<UserPrescript
 
     Context context;
 
-    ArrayList<User.Medication> list;
+    ArrayList<User.Prescription> list;
 
-    public UserPrescriptionsAdapter(Context context, ArrayList<User.Medication> list) {
+    public UserPrescriptionsAdapter(Context context, ArrayList<User.Prescription> list) {
         this.context = context;
         this.list = list;
     }
@@ -31,10 +31,10 @@ public class UserPrescriptionsAdapter extends RecyclerView.Adapter<UserPrescript
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        User.Medication userMedication = list.get(position);
-        holder.medicationName.setText(userMedication.getMedicineName());
-        holder.medicationDuration.setText(userMedication.getMedicineTime());
-        holder.medicationTime.setText(userMedication.getMedicineTime());
+        User.Prescription userPrescription = list.get(position);
+        holder.medicationName.setText(userPrescription.getMedicineName());
+        holder.medicationDuration.setText(userPrescription.getMedicineTime());
+        holder.medicationTime.setText(userPrescription.getMedicineTime());
     }
 
     @Override
