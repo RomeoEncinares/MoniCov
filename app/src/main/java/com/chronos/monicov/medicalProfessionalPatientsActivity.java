@@ -48,7 +48,7 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
         medicalProfessionalButton = findViewById(R.id.medicalNotificationButton);
         settingsButton = findViewById(R.id.medicalSettingsButton);
 
-        addPatient = findViewById(R.id.addPatientButton);
+//        addPatient = findViewById(R.id.addPatientButton);
 
         patientCount = findViewById(R.id.viewTotalPatient);
 
@@ -118,9 +118,9 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
             startActivity(new Intent(medicalProfessionalPatientsActivity.this, medicalProfessionalSettingsActivity.class));
         });
 
-        addPatient.setOnClickListener(view -> {
-            startActivity(new Intent(medicalProfessionalPatientsActivity.this, medicalProfessionalAddPatientActivity.class));
-        });
+//        addPatient.setOnClickListener(view -> {
+//            startActivity(new Intent(medicalProfessionalPatientsActivity.this, medicalProfessionalAddPatientActivity.class));
+//        });
 
     }
 
