@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/firstNameMedicalText"
+        android:id="@+id/accountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -44,12 +44,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/circle"
-        app:layout_constraintEnd_toEndOf="@+id/firstNameMedicalText"
-        app:layout_constraintStart_toStartOf="@+id/firstNameMedicalText"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameMedicalText" />
+        app:layout_constraintEnd_toEndOf="@+id/accountText"
+        app:layout_constraintStart_toStartOf="@+id/accountText"
+        app:layout_constraintTop_toBottomOf="@+id/accountText" />
 
     <TextView
-        android:id="@+id/lastNameMedicalText"
+        android:id="@+id/firstNameMedicalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -59,10 +59,10 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/circleInContainer"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameMedicalText" />
+        app:layout_constraintTop_toBottomOf="@+id/accountText" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/lastNameMedicalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -70,8 +70,8 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/lastNameMedicalText"
-        app:layout_constraintTop_toTopOf="@+id/lastNameMedicalText" />
+        app:layout_constraintStart_toEndOf="@+id/firstNameMedicalText"
+        app:layout_constraintTop_toTopOf="@+id/firstNameMedicalText" />
 
     <TextView
         android:id="@+id/textView5"
@@ -81,10 +81,10 @@
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="@+id/lastNameMedicalText"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/lastNameMedicalText"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameMedicalText" />
+        app:layout_constraintStart_toStartOf="@+id/firstNameMedicalText"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameMedicalText" />
 
     <TextView
         android:id="@+id/squareOutline"
@@ -94,8 +94,8 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/squareoutline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintStart_toEndOf="@+id/lastNameMedicalText"
+        app:layout_constraintTop_toTopOf="@+id/lastNameMedicalText" />
 
     <ImageButton
         android:id="@+id/angleRightbutton"
