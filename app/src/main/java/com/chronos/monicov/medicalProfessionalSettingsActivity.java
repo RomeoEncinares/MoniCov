@@ -4,10 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class medicalProfessionalSettingsActivity extends AppCompatActivity {
 
+    FirebaseAuth mAuth;
+
+    Button logoutButton;
     ImageButton homeButton, profileButton, settingsButton, patientsButton, accountButton;
 
     @Override
@@ -15,12 +21,19 @@ public class medicalProfessionalSettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical_professional_settings);
 
+        mAuth = FirebaseAuth.getInstance();
+
         homeButton = findViewById(R.id.medicalHomeButton);
         profileButton = findViewById(R.id.medicalProfileButton);
         patientsButton = findViewById(R.id.medicalPatientsButton);
         settingsButton = findViewById(R.id.medicalSettingsButton);
+        logoutButton = findViewById(R.id.buttonLogOut);
 
         accountButton = findViewById(R.id.angleRightbutton);
+
+        logoutButton.setOnClickListener(view -> {
+            logout();
+        });
 
         homeButton.setOnClickListener(view -> {
             startActivity(new Intent(medicalProfessionalSettingsActivity.this, medicalProfessionalHomeActivity.class));
@@ -42,5 +55,10 @@ public class medicalProfessionalSettingsActivity extends AppCompatActivity {
             startActivity(new Intent(medicalProfessionalSettingsActivity.this, medicalProfessionalSettingsAccountActivity.class));
         });
 
+    }
+
+    public void logout(){
+        mAuth.signOut();
+        startActivity(new Intent(medicalProfessionalSettingsActivity.this, LandingActivity.class));
     }
 }
