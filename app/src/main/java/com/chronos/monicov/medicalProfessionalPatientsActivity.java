@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -28,6 +29,7 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
     DatabaseReference mDatabase, patientListNode, currentPatientNode;
     FirebaseAuth mAuth;
     ImageButton homeButton, profileButton, medicalProfessionalButton, settingsButton, patientsButton, addPatient;
+    TextView patientCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,8 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
 
         addPatient = findViewById(R.id.addPatientButton);
 
+        patientCount = findViewById(R.id.viewTotalPatient);
+
         String currentUser = getCurrentPatient();
         String targetReference = currentUser.replace(".", "");
         mDatabase = FirebaseDatabase.getInstance().getReference("Medical Professional");
@@ -56,6 +60,8 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
         currentPatientNode.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                int size = (int) snapshot.getChildrenCount();
+                patientCount.setText(String.valueOf(size+1));
                 String value = snapshot.getKey();
                 patientList.add(value);
                 patientListAdapter.notifyDataSetChanged();
