@@ -17,7 +17,6 @@ import com.google.zxing.Result;
 public class acquaintanceScanActivity extends AppCompatActivity {
 
     private CodeScanner mCodeScanner;
-    TextView userEmailField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +24,6 @@ public class acquaintanceScanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_acquaintance_scan);
 
         CodeScannerView scannerView = findViewById(R.id.scanner_view);
-        userEmailField = findViewById(R.id.textView25);
 
         mCodeScanner = new CodeScanner(this, scannerView);
         mCodeScanner.setDecodeCallback(new DecodeCallback() {
@@ -34,8 +32,6 @@ public class acquaintanceScanActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        userEmailField.setText(result.getText());
-//                        Toast.makeText(acquaintanceScanActivity.this, result.getText(), Toast.LENGTH_SHORT).show();
                         Intent passData = new Intent(getBaseContext(), acquaintancePatientDayListActivity.class);
                         passData.putExtra("qrEmail", result.getText());
                         startActivity(passData);
