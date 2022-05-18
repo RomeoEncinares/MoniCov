@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MoniCov">
         <activity
+            android:name=".dischargeStatusListActivity"
+            android:exported="false" />
+        <activity
             android:name=".medicalProfessionalPatientAddMedicationActivity"
             android:exported="false" />
         <activity
