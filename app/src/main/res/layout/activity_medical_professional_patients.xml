@@ -98,17 +98,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstNameMedicalText" />
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/addPatientButton"-->
-<!--        android:layout_width="30dp"-->
-<!--        android:layout_height="30dp"-->
-<!--        android:layout_marginStart="60dp"-->
-<!--        android:backgroundTint="@color/white"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/textView22"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/textView22"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/textView22"-->
-<!--        app:srcCompat="@drawable/ic_user_plus" />-->
-
     <TextView
         android:id="@+id/iconNumberOfPatient"
         android:layout_width="27dp"
@@ -132,19 +121,13 @@
         app:layout_constraintStart_toEndOf="@+id/iconNumberOfPatient"
         app:layout_constraintTop_toTopOf="@+id/iconNumberOfPatient" />
 
-    <ListView
-        android:id="@+id/patientListButton"
-        android:layout_width="340dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/patientList"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/boxoutline"
-        android:dividerHeight="10dp"
-        android:text="Patient"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
