@@ -3,6 +3,8 @@ package com.chronos.monicov;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,14 +21,17 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class medicalProfessionalPatientsActivity extends AppCompatActivity {
 
-    ListView patientListView;
-    ArrayList<String> patientList = new ArrayList<>();
-    DatabaseReference mDatabase, patientListNode, currentPatientNode;
+    RecyclerView recyclerView;
+    DatabaseReference database;
+    MedicalProfessionalPatientListAdapter myAdapter;
+    ArrayList<MedicalProfessional.assignedPatient> list;
+
     FirebaseAuth mAuth;
     ImageButton homeButton, profileButton, settingsButton, patientsButton, addPatient;
     TextView patientCount;
@@ -38,62 +43,40 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        ArrayAdapter<String> patientListAdapter = new ArrayAdapter<>(medicalProfessionalPatientsActivity.this, android.R.layout.simple_list_item_1, patientList);
-        patientListView = (ListView) findViewById(R.id.patientListButton);
-        patientListView.setAdapter(patientListAdapter);
-
         homeButton = findViewById(R.id.medicalHomeButton);
         profileButton = findViewById(R.id.medicalProfileButton);
         patientsButton = findViewById(R.id.medicalPatientsButton);
         settingsButton = findViewById(R.id.medicalSettingsButton);
 
-//        addPatient = findViewById(R.id.addPatientButton);
-
         patientCount = findViewById(R.id.viewTotalPatient);
 
         String currentUser = getCurrentPatient();
         String targetReference = currentUser.replace(".", "");
-        mDatabase = FirebaseDatabase.getInstance().getReference("Medical Professional");
-        patientListNode = mDatabase.child(targetReference);
-        currentPatientNode = patientListNode.child("Patient List");
-        currentPatientNode.addChildEventListener(new ChildEventListener() {
+
+        recyclerView = findViewById(R.id.patientList);
+        database = FirebaseDatabase.getInstance().getReference("Medical Professional").child(targetReference).child("Patient List");
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        list = new ArrayList<>();
+        myAdapter = new MedicalProfessionalPatientListAdapter(this, list);
+        recyclerView.setAdapter(myAdapter);
+
+        database.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                int size = (int) snapshot.getChildrenCount();
-                patientCount.setText(String.valueOf(size+1));
-                String value = snapshot.getKey();
-                patientList.add(value);
-                patientListAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                patientListAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+                    MedicalProfessional.assignedPatient assignedPatient = dataSnapshot.getValue(MedicalProfessional.assignedPatient.class);
+                    int size = (int) snapshot.getChildrenCount();
+                    patientCount.setText(String.valueOf(size));
+                    list.add(assignedPatient);
+                }
+                myAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
-
-        patientListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String chosenPatient = adapterView.getItemAtPosition(i).toString();
-                Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientStatusLandingActivity.class);
-                passData.putExtra("patient", chosenPatient);
-                startActivity(passData);
             }
         });
 
@@ -112,10 +95,6 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
         settingsButton.setOnClickListener(view -> {
             startActivity(new Intent(medicalProfessionalPatientsActivity.this, medicalProfessionalSettingsActivity.class));
         });
-
-//        addPatient.setOnClickListener(view -> {
-//            startActivity(new Intent(medicalProfessionalPatientsActivity.this, medicalProfessionalAddPatientActivity.class));
-//        });
 
     }
 
