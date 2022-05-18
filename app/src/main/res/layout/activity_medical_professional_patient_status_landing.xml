@@ -93,4 +93,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnHealthStatus" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDischargePatient"
+        android:layout_width="315dp"
+        android:layout_height="45dp"
+        android:backgroundTint="@color/darkBlue_0C159F"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Discharge Patient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnViewMedication" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
