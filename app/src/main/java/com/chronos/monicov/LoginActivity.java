@@ -21,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+
 public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText emailField;
@@ -97,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.getChildren() != null && snapshot.getChildren().iterator().hasNext()){
-                    startActivity(new Intent(LoginActivity.this, patientHomeActivity.class));
+                    checkDischargeStatus(email);
                 }
                 else {
                     startActivity(new Intent(LoginActivity.this, medicalProfessionalHomeActivity.class));
@@ -111,5 +113,29 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void checkDischargeStatus(String email){
+        email = email.replace(".", "");
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        String finalEmail = email;
+        mDatabase.child("Patient").child(email).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                HashMap<String, String> map = (HashMap<String, String>) snapshot.getValue();
+                if(map.get("Discharge") != null){
+                    startActivity(new Intent(LoginActivity.this, dischargeStatusListActivity.class));
+                }
+                else{
+                    startActivity(new Intent(LoginActivity.this, patientHomeActivity.class));
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
