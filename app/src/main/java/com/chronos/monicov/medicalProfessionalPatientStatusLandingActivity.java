@@ -1,10 +1,13 @@
 package com.chronos.monicov;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.sax.StartElementListener;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,9 +23,9 @@ import java.util.HashMap;
 public class medicalProfessionalPatientStatusLandingActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase, pDatabase;
 
-    Button viewHealthStatusButton, viewMedicationButton;
+    Button viewHealthStatusButton, viewMedicationButton, dischargePatientButton;
     TextView firstNameTextField, lastNameTextField;
 
     @Override
@@ -40,6 +43,7 @@ public class medicalProfessionalPatientStatusLandingActivity extends AppCompatAc
 
         viewHealthStatusButton = findViewById(R.id.btnHealthStatus);
         viewMedicationButton = findViewById(R.id.btnViewMedication);
+        dischargePatientButton = findViewById(R.id.btnDischargePatient);
 
         viewHealthStatusButton.setOnClickListener(view -> {
             Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientStatusDayListActivity.class);
@@ -52,6 +56,28 @@ public class medicalProfessionalPatientStatusLandingActivity extends AppCompatAc
             Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientViewMedicationActivity.class);
             passData.putExtra("patient", chosenPatient);
             startActivity(passData);
+        });
+
+        dischargePatientButton.setOnClickListener(view -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.setMessage("Are you sure you want to discharge this patient?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dischargePatient(chosenPatient);
+                            startActivity(new Intent(medicalProfessionalPatientStatusLandingActivity.this, medicalProfessionalPatientsActivity.class));
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         });
     }
 
@@ -75,5 +101,21 @@ public class medicalProfessionalPatientStatusLandingActivity extends AppCompatAc
 
             }
         });
+    }
+
+    public void dischargePatient(String chosenPatient){
+        String emailKey = getCurrentMedical();
+        emailKey = emailKey.replace(".", "");
+        chosenPatient = chosenPatient.replace(".", "");
+        mDatabase = FirebaseDatabase.getInstance().getReference("Medical Professional").child(emailKey).child("Patient List").child(chosenPatient);
+        mDatabase.removeValue();
+        pDatabase = FirebaseDatabase.getInstance().getReference("Patient").child(chosenPatient);
+        HashMap map = new HashMap();
+        map.put("Discharge", "true");
+        pDatabase.updateChildren(map);
+    }
+
+    public String getCurrentMedical(){
+        String currentUser = mAuth.getCurrentUser().getEmail().toString();return currentUser;
     }
 }
