@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     TextInputEditText firstNameField;
     TextInputEditText lastNameField;
     Button registerButton;
-    private DatabaseReference mDatabase, medicalProfessionalNode, patientListNode;;
+    private DatabaseReference mDatabase, medicalProfessionalNode, patientListNode;
     private FirebaseDatabase database;
     private Spinner spinner;
 
@@ -95,7 +95,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 mDatabase = database.getReference("Patient");
                 String keyId = email.replace(".", "");
                 mDatabase.child(keyId).setValue(patient);
-                mDatabase = database.getReference("Medical Professional");
                 // Pass Data to RegisterIfPatientActivity
                 Intent passData = new Intent(getBaseContext(), RegisterIfPatientActivity.class);
                 passData.putExtra("email", email);
@@ -105,6 +104,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             } else {
                 MedicalProfessional medicalProfessional = new MedicalProfessional(email, password, userType, firstName, lastName);
                 String keyId = email.replace(".", "");
+                mDatabase = database.getReference("Medical Professional");
                 mDatabase.child(keyId).setValue(medicalProfessional);
                 startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
 
