@@ -24,9 +24,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class medicalProfessionalPatientsActivity extends AppCompatActivity {
 
+    private DatabaseReference mDatabase;
     RecyclerView recyclerView;
     DatabaseReference database;
     MedicalProfessionalPatientListAdapter myAdapter;
@@ -35,6 +37,7 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     ImageButton homeButton, profileButton, settingsButton, patientsButton, addPatient;
     TextView patientCount;
+    TextView firstNameTextField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +51,12 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
         patientsButton = findViewById(R.id.medicalPatientsButton);
         settingsButton = findViewById(R.id.medicalSettingsButton);
 
+        firstNameTextField = findViewById(R.id.firstNameText);
         patientCount = findViewById(R.id.viewTotalPatient);
 
         String currentUser = getCurrentPatient();
         String targetReference = currentUser.replace(".", "");
+        queryData(targetReference);
 
         recyclerView = findViewById(R.id.patientList);
         database = FirebaseDatabase.getInstance().getReference("Medical Professional").child(targetReference).child("Patient List");
@@ -100,5 +105,25 @@ public class medicalProfessionalPatientsActivity extends AppCompatActivity {
 
     public String getCurrentPatient(){
         String currentUser = mAuth.getCurrentUser().getEmail().toString();return currentUser;
+    }
+
+    public void queryData(String email){
+        mDatabase = FirebaseDatabase.getInstance().getReference("Medical Professional").child(email);
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                HashMap<String, String> map = (HashMap<String, String>) snapshot.getValue();
+                String firstName = map.get("firstname");
+                String lastName = map.get("lastname");
+                char lastNameChar = lastName.charAt(0);
+
+                firstNameTextField.setText(firstName);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
