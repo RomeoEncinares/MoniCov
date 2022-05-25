@@ -11,68 +11,63 @@
         android:id="@+id/settingsHeaderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:text="Settings"
         android:textColor="@color/darkBlue_0C159F"
-        android:textSize="40dp"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/circle"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="wrap_content"
-        android:layout_height="33dp"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
-
-        <TextView
+    <TextView
             android:id="@+id/firstNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FirstName"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Firstname"
             android:textColor="@color/black"
-            android:textSize="24dp"
-            android:textStyle="bold" />
-
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="match_parent" />
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
             android:id="@+id/lastNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LastName"
+            android:layout_marginStart="8dp"
+            android:text="Lastname"
             android:textColor="@color/black"
-            android:textSize="24dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/firstNameText"
+            app:layout_constraintTop_toTopOf="@+id/firstNameText" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:text="Account"
-        android:textColor="@color/moderateBlue_3347C4"
-        android:textSize="24dp"
-        android:textStyle="bold"
+        android:textColor="@color/darkBlue_0C159F"
+        android:textSize="30sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="@+id/settingsHeaderText"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/settingsHeaderText"
@@ -84,10 +79,32 @@
         android:layout_height="wrap_content"
         android:text="Personal Information"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout6"
+        app:layout_constraintEnd_toEndOf="@+id/firstNameText"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout6"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
+        app:layout_constraintStart_toStartOf="@+id/firstNameText"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameText" />
+
+    <TextView
+        android:id="@+id/squareOutline"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/squareoutline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lastNameText"
+        app:layout_constraintTop_toTopOf="@+id/lastNameText" />
+
+    <ImageButton
+        android:id="@+id/angleRightbutton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/squareOutline"
+        app:layout_constraintEnd_toEndOf="@+id/squareOutline"
+        app:layout_constraintStart_toStartOf="@+id/squareOutline"
+        app:layout_constraintTop_toTopOf="@+id/squareOutline"
+        app:srcCompat="@drawable/ic_angle_right" />
 
     <Button
         android:id="@+id/logoutPatient"
