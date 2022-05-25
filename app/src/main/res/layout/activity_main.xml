@@ -18,8 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/slogantextView"
@@ -34,22 +34,32 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.291" />
+        app:layout_constraintTop_toBottomOf="@+id/monicovtextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/get_Started"
         android:layout_width="145dp"
         android:layout_height="50dp"
+        android:backgroundTint="@color/darkBlue_0C159F"
         android:text="Get Started"
         android:textAllCaps="false"
         android:textStyle="bold"
-        android:backgroundTint="@color/darkBlue_0C159F"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slogantextView"
+        app:layout_constraintVertical_bias="0.451" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
