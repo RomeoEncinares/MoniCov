@@ -42,6 +42,7 @@ public class medicalProfessionalPatientViewMedicationActivity extends AppCompatA
         lastNameTextField = findViewById(R.id.lastNameText);
 
         String chosenPatient = getIntent().getStringExtra("patient").toString();
+        chosenPatient = chosenPatient.replace(".", "");
         queryData(chosenPatient);
 
         recyclerView = findViewById(R.id.medicationList);
@@ -69,9 +70,10 @@ public class medicalProfessionalPatientViewMedicationActivity extends AppCompatA
             }
         });
 
+        String finalChosenPatient = chosenPatient;
         addMedicationButton.setOnClickListener(view -> {
             Intent passData = new Intent(getBaseContext(), medicalProfessionalPatientAddMedicationActivity.class);
-            passData.putExtra("patient", chosenPatient);
+            passData.putExtra("patient", finalChosenPatient);
             startActivity(passData);
         });
 
