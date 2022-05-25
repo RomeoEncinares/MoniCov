@@ -24,7 +24,7 @@ public class patientSettingsActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
 
     Button logoutButton;
-    ImageButton homeButton, profileButton, statusButton, medicalProfessionalButton, settingsButton;
+    ImageButton homeButton, profileButton, statusButton, medicalProfessionalButton, settingsButton, accountButton;
     TextView firstNameTextField, lastNameTextField;
 
     @Override
@@ -37,6 +37,8 @@ public class patientSettingsActivity extends AppCompatActivity {
         statusButton = findViewById(R.id.patientAddStatusButton);
         medicalProfessionalButton = findViewById(R.id.patientMedicalButton);
         settingsButton = findViewById(R.id.patientSettingsButton);
+
+        accountButton = findViewById(R.id.angleRightbutton);
 
         mAuth = FirebaseAuth.getInstance();
         logoutButton = findViewById(R.id.logoutPatient);
@@ -67,6 +69,10 @@ public class patientSettingsActivity extends AppCompatActivity {
 
         settingsButton.setOnClickListener(view -> {
             startActivity(new Intent(patientSettingsActivity.this, patientSettingsActivity.class));
+        });
+
+        accountButton.setOnClickListener(view -> {
+            startActivity(new Intent(patientSettingsActivity.this, medicalProfessionalSettingsAccountActivity.class));
         });
 
     }
