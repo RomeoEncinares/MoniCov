@@ -92,11 +92,7 @@ public class patientMedicalProfessionalProfileActivity extends AppCompatActivity
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 HashMap<String, String> map = (HashMap<String, String>) snapshot.getValue();
-                String firstName = map.get("firstname");
-                String lastName = map.get("lastname");
                 String medicalEmail = map.get("medicalProfessionalEmail");
-                firstNameMedicalTextField.setText(firstName);
-                lastNameMedicalTextField.setText(lastName);
                 queryMedicalProfessionalData(medicalEmail);
             }
 
@@ -119,6 +115,8 @@ public class patientMedicalProfessionalProfileActivity extends AppCompatActivity
                 String hospitalName = map.get("hospitalName");
                 String hospitalAddress = map.get("hospitalAddress");
                 String hospitalContact = map.get("hospitalContactNumber");
+                String firstName = map.get("firstname");
+                String lastName = map.get("lastname");
 
                 medicalProfessionalAboutField.setText(about);
                 medicalProfessionalGenderField.setText(gender);
@@ -126,6 +124,8 @@ public class patientMedicalProfessionalProfileActivity extends AppCompatActivity
                 medicalProfessionalHospitalNameField.setText(hospitalName);
                 medicalProfessionalHospitalAddressField.setText(hospitalAddress);
                 medicalProfessionalHospitalContactNumberField.setText(hospitalContact);
+                firstNameMedicalTextField.setText(firstName);
+                lastNameMedicalTextField.setText(lastName);
             }
 
             @Override
